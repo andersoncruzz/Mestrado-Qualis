@@ -1,0 +1,312 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\astroncite{Alpaydin}{2014}]{alpaydin2014introduction}
+Alpaydin, E. (2014).
+\newblock {\em Introduction to machine learning}.
+\newblock MIT press.
+
+\bibitem[\protect\astroncite{Barsoum et~al.}{2016a}]{barsoum2016training}
+Barsoum, E., Zhang, C., Ferrer, C.~C., and Zhang, Z. (2016a).
+\newblock Training deep networks for facial expression recognition with
+  crowd-sourced label distribution.
+\newblock In {\em Proceedings of the 18th ACM International Conference on
+  Multimodal Interaction}, pages 279--283. ACM.
+
+\bibitem[\protect\astroncite{Barsoum et~al.}{2016b}]{art8}
+Barsoum, E., Zhang, C., Ferrer, C.~C., and Zhang, Z. (2016b).
+\newblock Training deep networks for facial expression recognition with
+  crowd-sourced label distribution.
+\newblock In {\em Proceedings of the 18th ACM International Conference on
+  Multimodal Interaction}, pages 279--283. ACM.
+
+\bibitem[\protect\astroncite{Basili et~al.}{1994}]{basili1994experience}
+Basili, V.~R., Caldiera, G., and Rombach, H.~D. (1994).
+\newblock Experience factory.
+\newblock {\em Encyclopedia of software engineering}.
+
+\bibitem[\protect\astroncite{Biolchini et~al.}{2005}]{biolchini2005systematic}
+Biolchini, J., Mian, P.~G., Natali, A. C.~C., and Travassos, G.~H. (2005).
+\newblock Systematic review in software engineering.
+\newblock {\em System Engineering and Computer Science Department COPPE/UFRJ,
+  Technical Report ES}, 679(05):45.
+
+\bibitem[\protect\astroncite{Chen et~al.}{2017a}]{chen2017convolution}
+Chen, X., Yang, X., Wang, M., and Zou, J. (2017a).
+\newblock Convolution neural network for automatic facial expression
+  recognition.
+\newblock In {\em Applied System Innovation (ICASI), 2017 International
+  Conference on}, pages 814--817. IEEE.
+
+\bibitem[\protect\astroncite{Chen et~al.}{2017b}]{art1}
+Chen, X., Yang, X., Wang, M., and Zou, J. (2017b).
+\newblock Convolution neural network for automatic facial expression
+  recognition.
+\newblock In {\em Applied System Innovation (ICASI), 2017 International
+  Conference on}, pages 814--817. IEEE.
+
+\bibitem[\protect\astroncite{Cruz et~al.}{2017}]{cruz2017framework}
+Cruz, A., Leit{\~a}o, G., Colonna, J., Silva, E., Barreto, R., and Primo, T.
+  (2017).
+\newblock Framework para coleta e infer{\^e}ncia de estados emocionais de
+  alunos baseado em reconhecimento de express{\~o}es faciais.
+\newblock In {\em Brazilian Symposium on Computers in Education (Simp{\'o}sio
+  Brasileiro de Inform{\'a}tica na Educa{\c{c}}{\~a}o-SBIE)}, volume~28, page
+  997.
+
+\bibitem[\protect\astroncite{Darwin}{1965}]{darwin1965expression}
+Darwin, C. (1965).
+\newblock {\em The expression of the emotions in man and animals}, volume 526.
+\newblock University of Chicago press.
+
+\bibitem[\protect\astroncite{Ekman and Friesen}{1977}]{ekman1977facial}
+Ekman, P. and Friesen, W.~V. (1977).
+\newblock Facial action coding system.
+
+\bibitem[\protect\astroncite{Ekman and Davidson}{1994}]{ekman1994}
+Ekman, P.~E. and Davidson, R.~J. (1994).
+\newblock {\em The nature of emotion: Fundamental questions.}
+\newblock Oxford University Press.
+
+\bibitem[\protect\astroncite{G{\'e}ron}{2017}]{geron2017hands}
+G{\'e}ron, A. (2017).
+\newblock Hands-on machine learning with scikit-learn and tensorflow: concepts,
+  tools, and techniques to build intelligent systems.
+
+\bibitem[\protect\astroncite{Goodfellow et~al.}{2016}]{goodfellow2016deep}
+Goodfellow, I., Bengio, Y., and Courville, A. (2016).
+\newblock {\em Deep learning}.
+\newblock MIT press.
+
+\bibitem[\protect\astroncite{Guo et~al.}{2016}]{art10}
+Guo, Y., Tao, D., Yu, J., Xiong, H., Li, Y., and Tao, D. (2016).
+\newblock Deep neural networks with relativity learning for facial expression
+  recognition.
+\newblock In {\em Multimedia \& Expo Workshops (ICMEW), 2016 IEEE International
+  Conference on}, pages 1--6. IEEE.
+
+\bibitem[\protect\astroncite{Huang and Lu}{2016}]{art7}
+Huang, Y. and Lu, H. (2016).
+\newblock Deep learning driven hypergraph representation for image-based
+  emotion recognition.
+\newblock In {\em Proceedings of the 18th ACM International Conference on
+  Multimodal Interaction}, pages 243--247. ACM.
+
+\bibitem[\protect\astroncite{Hubel}{1959}]{hubel1959single}
+Hubel, D.~H. (1959).
+\newblock Single unit activity in striate cortex of unrestrained cats.
+\newblock {\em The Journal of physiology}, 147(2):226--238.
+
+\bibitem[\protect\astroncite{Hubel and Wiesel}{1959}]{hubel1959receptive}
+Hubel, D.~H. and Wiesel, T.~N. (1959).
+\newblock Receptive fields of single neurones in the cat's striate cortex.
+\newblock {\em The Journal of physiology}, 148(3):574--591.
+
+\bibitem[\protect\astroncite{Hubel and Wiesel}{1968}]{hubel1968receptive}
+Hubel, D.~H. and Wiesel, T.~N. (1968).
+\newblock Receptive fields and functional architecture of monkey striate
+  cortex.
+\newblock {\em The Journal of physiology}, 195(1):215--243.
+
+\bibitem[\protect\astroncite{Jain}{1989}]{jain1989fundamentals}
+Jain, A.~K. (1989).
+\newblock {\em Fundamentals of digital image processing}.
+\newblock Prentice-Hall, Inc.
+
+\bibitem[\protect\astroncite{Jaques and Nunes}{2013}]{jaques2013ambientes}
+Jaques, P.~A. and Nunes, M. A.~S. (2013).
+\newblock Ambientes inteligentes de aprendizagem que inferem, expressam e
+  possuem emo{\c{c}}{\~o}es e personalidade.
+\newblock {\em Jornada de Atualiza{\c{c}}{\~a}o em Inform{\'a}tica na
+  Educa{\c{c}}{\~a}o}, 1(1):30--81.
+
+\bibitem[\protect\astroncite{Jung et~al.}{2015a}]{jung2015development}
+Jung, H., Lee, S., Park, S., Kim, B., Kim, J., Lee, I., and Ahn, C. (2015a).
+\newblock Development of deep learning-based facial expression recognition
+  system.
+\newblock In {\em Frontiers of Computer Vision (FCV), 2015 21st Korea-Japan
+  Joint Workshop on}, pages 1--4. IEEE.
+
+\bibitem[\protect\astroncite{Jung et~al.}{2015b}]{art14}
+Jung, H., Lee, S., Park, S., Kim, B., Kim, J., Lee, I., and Ahn, C. (2015b).
+\newblock Development of deep learning-based facial expression recognition
+  system.
+\newblock In {\em Frontiers of Computer Vision (FCV), 2015 21st Korea-Japan
+  Joint Workshop on}, pages 1--4. IEEE.
+
+\bibitem[\protect\astroncite{Kim et~al.}{2016a}]{kim2016fusing}
+Kim, B.-K., Dong, S.-Y., Roh, J., Kim, G., and Lee, S.-Y. (2016a).
+\newblock Fusing aligned and non-aligned face information for automatic affect
+  recognition in the wild: A deep learning approach.
+\newblock In {\em Proceedings of the IEEE Conference on Computer Vision and
+  Pattern Recognition Workshops}, pages 48--57.
+
+\bibitem[\protect\astroncite{Kim et~al.}{2016b}]{art4}
+Kim, B.-K., Dong, S.-Y., Roh, J., Kim, G., and Lee, S.-Y. (2016b).
+\newblock Fusing aligned and non-aligned face information for automatic affect
+  recognition in the wild: A deep learning approach.
+\newblock In {\em Proceedings of the IEEE Conference on Computer Vision and
+  Pattern Recognition Workshops}, pages 48--57.
+
+\bibitem[\protect\astroncite{Kitchenham}{2004}]{kitchenham2004procedures}
+Kitchenham, B. (2004).
+\newblock Procedures for performing systematic reviews.
+\newblock {\em Keele, UK, Keele University}, 33(2004):1--26.
+
+\bibitem[\protect\astroncite{Kotsiantis
+  et~al.}{2007}]{kotsiantis2007supervised}
+Kotsiantis, S.~B., Zaharakis, I., and Pintelas, P. (2007).
+\newblock Supervised machine learning: A review of classification techniques.
+
+\bibitem[\protect\astroncite{LeCun et~al.}{1998}]{lecun1998gradient}
+LeCun, Y., Bottou, L., Bengio, Y., and Haffner, P. (1998).
+\newblock Gradient-based learning applied to document recognition.
+\newblock {\em Proceedings of the IEEE}, 86(11):2278--2324.
+
+\bibitem[\protect\astroncite{Li et~al.}{2015a}]{li2015deep}
+Li, W., Li, M., Su, Z., and Zhu, Z. (2015a).
+\newblock A deep-learning approach to facial expression recognition with candid
+  images.
+\newblock In {\em Machine Vision Applications (MVA), 2015 14th IAPR
+  International Conference on}, pages 279--282. IEEE.
+
+\bibitem[\protect\astroncite{Li et~al.}{2015b}]{art15}
+Li, W., Li, M., Su, Z., and Zhu, Z. (2015b).
+\newblock A deep-learning approach to facial expression recognition with candid
+  images.
+\newblock In {\em Machine Vision Applications (MVA), 2015 14th IAPR
+  International Conference on}, pages 279--282. IEEE.
+
+\bibitem[\protect\astroncite{Liu et~al.}{2016a}]{liu2016facial}
+Liu, K., Zhang, M., and Pan, Z. (2016a).
+\newblock Facial expression recognition with cnn ensemble.
+\newblock In {\em Cyberworlds (CW), 2016 International Conference on}, pages
+  163--166. IEEE.
+
+\bibitem[\protect\astroncite{Liu et~al.}{2016b}]{art5}
+Liu, K., Zhang, M., and Pan, Z. (2016b).
+\newblock Facial expression recognition with cnn ensemble.
+\newblock In {\em Cyberworlds (CW), 2016 International Conference on}, pages
+  163--166. IEEE.
+
+\bibitem[\protect\astroncite{Mafra and Travassos}{2006}]{mafra2006estudos}
+Mafra, S.~N. and Travassos, G.~H. (2006).
+\newblock Estudos prim{\'a}rios e secund{\'a}rios apoiando a busca por
+  evid{\^e}ncia em engenharia de software.
+\newblock {\em Relat{\'o}rio T{\'e}cnico, RT-ES}, 687(06).
+
+\bibitem[\protect\astroncite{Mayya et~al.}{2016}]{art12}
+Mayya, V., Pai, R.~M., and Pai, M.~M. (2016).
+\newblock Automatic facial expression recognition using dcnn.
+\newblock {\em Procedia Computer Science}, 93:453--461.
+
+\bibitem[\protect\astroncite{Nasoz et~al.}{2004}]{nasoz2004emotion}
+Nasoz, F., Alvarez, K., Lisetti, C.~L., and Finkelstein, N. (2004).
+\newblock Emotion recognition from physiological signals using wireless sensors
+  for presence technologies.
+\newblock {\em Cognition, Technology \& Work}, 6(1):4--14.
+
+\bibitem[\protect\astroncite{Ng et~al.}{2015}]{art13}
+Ng, H.-W., Nguyen, V.~D., Vonikakis, V., and Winkler, S. (2015).
+\newblock Deep learning for emotion recognition on small datasets using
+  transfer learning.
+\newblock In {\em Proceedings of the 2015 ACM on international conference on
+  multimodal interaction}, pages 443--449. ACM.
+
+\bibitem[\protect\astroncite{Riva et~al.}{2007}]{riva2007affective}
+Riva, G., Mantovani, F., Capideville, C.~S., Preziosa, A., Morganti, F.,
+  Villani, D., Gaggioli, A., Botella, C., and Alca{\~n}iz, M. (2007).
+\newblock Affective interactions using virtual reality: the link between
+  presence and emotions.
+\newblock {\em CyberPsychology \& Behavior}, 10(1):45--56.
+
+\bibitem[\protect\astroncite{Scherer}{2000}]{scherer2000psychological}
+Scherer, K.~R. (2000).
+\newblock Psychological models of emotion.
+\newblock {\em The neuropsychology of emotion}, 137(3):137--162.
+
+\bibitem[\protect\astroncite{Shan et~al.}{2017}]{art2}
+Shan, K., Guo, J., You, W., Lu, D., and Bie, R. (2017).
+\newblock Automatic facial expression recognition based on a deep
+  convolutional-neural-network structure.
+\newblock In {\em Software Engineering Research, Management and Applications
+  (SERA), 2017 IEEE 15th International Conference on}, pages 123--128. IEEE.
+
+\bibitem[\protect\astroncite{Shin et~al.}{2016a}]{shin2016baseline}
+Shin, M., Kim, M., and Kwon, D.-S. (2016a).
+\newblock Baseline cnn structure analysis for facial expression recognition.
+\newblock In {\em Robot and Human Interactive Communication (RO-MAN), 2016 25th
+  IEEE International Symposium on}, pages 724--729. IEEE.
+
+\bibitem[\protect\astroncite{Shin et~al.}{2016b}]{art6}
+Shin, M., Kim, M., and Kwon, D.-S. (2016b).
+\newblock Baseline cnn structure analysis for facial expression recognition.
+\newblock In {\em Robot and Human Interactive Communication (RO-MAN), 2016 25th
+  IEEE International Symposium on}, pages 724--729. IEEE.
+
+\bibitem[\protect\astroncite{Simonyan and Zisserman}{2014}]{simonyan2014very}
+Simonyan, K. and Zisserman, A. (2014).
+\newblock Very deep convolutional networks for large-scale image recognition.
+\newblock {\em arXiv preprint arXiv:1409.1556}.
+
+\bibitem[\protect\astroncite{Szegedy et~al.}{2015}]{szegedy2015going}
+Szegedy, C., Liu, W., Jia, Y., Sermanet, P., Reed, S., Anguelov, D., Erhan, D.,
+  Vanhoucke, V., and Rabinovich, A. (2015).
+\newblock Going deeper with convolutions.
+\newblock In {\em Proceedings of the IEEE conference on computer vision and
+  pattern recognition}, pages 1--9.
+
+\bibitem[\protect\astroncite{Viola and Jones}{2001}]{viola2001rapid}
+Viola, P. and Jones, M. (2001).
+\newblock Rapid object detection using a boosted cascade of simple features.
+\newblock In {\em Computer Vision and Pattern Recognition, 2001. CVPR 2001.
+  Proceedings of the 2001 IEEE Computer Society Conference on}, volume~1, pages
+  I--I. IEEE.
+
+\bibitem[\protect\astroncite{Vo and Le}{2016}]{art9}
+Vo, D.~M. and Le, T.~H. (2016).
+\newblock Deep generic features and svm for facial expression recognition.
+\newblock In {\em Information and Computer Science (NICS), 2016 3rd National
+  Foundation for Science and Technology Development Conference on}, pages
+  80--84. IEEE.
+
+\bibitem[\protect\astroncite{Wen et~al.}{2017a}]{wen2017ensemble}
+Wen, G., Hou, Z., Li, H., Li, D., Jiang, L., and Xun, E. (2017a).
+\newblock Ensemble of deep neural networks with probability-based fusion for
+  facial expression recognition.
+\newblock {\em Cognitive Computation}, pages 1--14.
+
+\bibitem[\protect\astroncite{Wen et~al.}{2017b}]{art3}
+Wen, G., Hou, Z., Li, H., Li, D., Jiang, L., and Xun, E. (2017b).
+\newblock Ensemble of deep neural networks with probability-based fusion for
+  facial expression recognition.
+\newblock {\em Cognitive Computation}, pages 1--14.
+
+\bibitem[\protect\astroncite{Yu et~al.}{2016a}]{yu2016face}
+Yu, X., Huang, J., Zhang, S., and Metaxas, D.~N. (2016a).
+\newblock Face landmark fitting via optimized part mixtures and cascaded
+  deformable model.
+\newblock {\em IEEE transactions on pattern analysis and machine intelligence},
+  38(11):2212--2226.
+
+\bibitem[\protect\astroncite{Yu et~al.}{2014}]{yu2014consensus}
+Yu, X., Lin, Z., Brandt, J., and Metaxas, D.~N. (2014).
+\newblock Consensus of regression for occlusion-robust facial feature
+  localization.
+\newblock In {\em European Conference on Computer Vision}, pages 105--118.
+  Springer.
+
+\bibitem[\protect\astroncite{Yu et~al.}{2016b}]{yu2016customized}
+Yu, X., Yang, J., Luo, L., Li, W., Brandt, J., and Metaxas, D. (2016b).
+\newblock Customized expression recognition for performance-driven cutout
+  character animation.
+\newblock In {\em Applications of Computer Vision (WACV), 2016 IEEE Winter
+  Conference on}, pages 1--9. IEEE.
+
+\bibitem[\protect\astroncite{Yu et~al.}{2016c}]{art11}
+Yu, X., Yang, J., Luo, L., Li, W., Brandt, J., and Metaxas, D. (2016c).
+\newblock Customized expression recognition for performance-driven cutout
+  character animation.
+\newblock In {\em Applications of Computer Vision (WACV), 2016 IEEE Winter
+  Conference on}, pages 1--9. IEEE.
+
+\end{thebibliography}
