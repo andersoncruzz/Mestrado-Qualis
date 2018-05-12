@@ -58,6 +58,12 @@ Darwin, C. (1965).
 \newblock {\em The expression of the emotions in man and animals}, volume 526.
 \newblock University of Chicago press.
 
+\bibitem[\protect\astroncite{D'Mello and Calvo}{2013}]{d2013beyond}
+D'Mello, S. and Calvo, R.~A. (2013).
+\newblock Beyond the basic emotions: what should affective computing compute?
+\newblock In {\em CHI'13 Extended Abstracts on Human Factors in Computing
+  Systems}, pages 2287--2294. ACM.
+
 \bibitem[\protect\astroncite{Ekman and Friesen}{1977}]{ekman1977facial}
 Ekman, P. and Friesen, W.~V. (1977).
 \newblock Facial action coding system.
