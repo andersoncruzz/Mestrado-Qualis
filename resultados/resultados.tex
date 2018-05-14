@@ -140,3 +140,40 @@ Seguimos a abordagem proposta na Seção \ref{sec:abordagemproposta}, e como det
 
 \section{Resumo}\label{sec:considera}
 Foi possível verificar que o reconhecedor de emoção tem muita aplicação, iniciamos nossa aplicação no cenário real em uma prova de conceito na área de educação, no qual há muitas utilidades. Esta prova de conceito nos deu norte para a evolução desta proposta. Consequentemente foi iniciado o desenvolvimento do reconhecedor que esta proposta pretende gerar como contribuição. Há muitos trabalhos futuros, principalmente combinar as diversas técnicas de pré-processamento com as diversas arquiteturas de RNC juntamente com as bases de dados. A área de aprendizagem de máquina costuma ser bastante experimental e aparentemente temos bastante configuração de experimento para testar, até encontrar a melhor taxa de aprendizado da RNC.
+
+
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+\begin{table}[]
+\centering
+\caption{My caption}
+\label{my-label}
+\begin{tabular}{llcccc}
+\hline
+\textbf{Arquitetura}                & \textbf{Emoção}       & \textbf{Precisão} & \textbf{Revocação} & \textbf{F1-score} & \textbf{Acurácia}               \\ \hline
+\multirow{8}{*}{Alexnet}            & Raiva                 & 0.51              & 0.60               & 0.55              & \multirow{8}{*}{0.712}          \\
+                                    & Desgosto              & 0.62              & 0.64               & 0.63              &                                 \\
+                                    & Medo                  & 0.47              & 0.41               & 0.44              &                                 \\
+                                    & Felicidade            & 0.84              & 0.89               & 0.86              &                                 \\
+                                    & Tristeza              & 0.64              & 0.50               & 0.56              &                                 \\
+                                    & Surpresa              & 0.84              & 0.77               & 0.80              &                                 \\
+                                    & Neutralidade          & 0.62              & 0.64               & 0.63              &                                 \\
+                                    & Média/Total           & 0.71              & 0.71               & 0.71              &                                 \\ \hline
+\multirow{8}{*}{Inception-V3}       & Raiva                 & 0.54              & 0.51               & 0.52              & \multirow{8}{*}{0.701}          \\
+                                    & Desgosto              & 0.56              & 0.57               & 0.56              &                                 \\
+                                    & Medo                  & 0.47              & 0.42               & 0.44              &                                 \\
+                                    & Felicidade            & 0.88              & 0.88               & 0.88              &                                 \\
+                                    & Tristeza              & 0.47              & 0.53               & 0.50              &                                 \\
+                                    & Surpresa              & 0.85              & 0.79               & 0.82              &                                 \\
+                                    & Neutralidade          & 0.59              & 0.62               & 0.61              &                                 \\
+                                    & Média/Total           & 0.70              & 0.70               & 0.70              &                                 \\ \hline
+\multirow{8}{*}{\textbf{Resnet-32}} & \textbf{Raiva}        & \textbf{0.69}     & \textbf{0.57}      & \textbf{0.62}     & \multirow{8}{*}{\textbf{0.757}} \\
+                                    & \textbf{Desgosto}     & \textbf{0.79}     & \textbf{0.66}      & \textbf{0.72}     &                                 \\
+                                    & \textbf{Medo}         & \textbf{0.45}     & \textbf{0.50}      & \textbf{0.47}     &                                 \\
+                                    & \textbf{Felicidade}   & \textbf{0.90}     & \textbf{0.89}      & \textbf{0.90}     &                                 \\
+                                    & \textbf{Tristeza}     & \textbf{0.60}     & \textbf{0.65}      & \textbf{0.63}     &                                 \\
+                                    & \textbf{Surpresa}     & \textbf{0.82}     & \textbf{0.86}      & \textbf{0.84}     &                                 \\
+                                    & \textbf{Neutralidade} & \textbf{0.67}     & \textbf{0.68}      & \textbf{0.68}     &                                 \\
+                                    & \textbf{Média/Total}  & \textbf{0.76}     & \textbf{0.76}      & \textbf{0.76}     &                                 \\ \hline
+\end{tabular}
+\end{table}
