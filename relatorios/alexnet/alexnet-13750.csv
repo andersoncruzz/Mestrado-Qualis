@@ -1,0 +1,11 @@
+Acurácia do modelo: alexnet-13750 ,,,,
+0.7080496596,,,,
+emotions,precision,recall,f1-score,support
+angry,0.56,0.52,0.54,1650
+disgusted,0.59,0.63,0.61,1226
+fearful,0.59,0.27,0.37,1410
+happy,0.82,0.89,0.85,6971
+sad,0.75,0.4,0.52,2174
+surprised,0.81,0.8,0.81,3155
+neutral,0.55,0.74,0.63,3390
+avg/total,0.71,0.71,0.7,19976

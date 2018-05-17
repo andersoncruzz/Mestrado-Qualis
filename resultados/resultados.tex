@@ -121,9 +121,8 @@ Um estudo experimental foi realizado a fim de comparar diversos tipos de arquite
 
 Foi iniciado o desenvolvimento do reconhecedor de emoção, visto que, para trabalhar com redes profundas, especificamente com as redes neurais de convolução é necessário dispor de grandes quantidades de recursos computacionais relacionadas a memória e a processamento. Por isso, como ponto de partida optamos por uma arquitetura reduzida da AlexNet ilustrada na Figura \ref{fig:implementadaarquitetura}, utilizamos esta arquitetura para treinar e gerar um modelo para classificar emoções em expressões faciais.
 
-Para gerar o modelo utilizamos a base de dados \textit{FER-2013} tanto para treinar como para validar, esta base é bastante utilizada pela literatura e contém 28709 imagens de expressão facial com as seguintes emoções (classes): raiva, desgosto, medo, felicidade, tristeza, surpresa e neutralidade. Foi utilizado 2/3 da base de dados para treinamento e o restante para validação. A rede foi treinada por 140 épocas e alcançou os seguintes resultados expresso na matriz de confusão na Figura \ref{fig:confusionmatrix}. Para implementação da rede neural de convolução foi utilizado o \textit{framework Tensorflow} (\url{https://www.tensorflow.org/}), em um computador com a seguinte configuração: \textit{GPU NVIDIA GEFORCE 930}, \textit{Intel Core-i7} e \textit{16 GB de RAM DDR4}. 
-
-Seguimos a abordagem proposta na Seção \ref{sec:abordagemproposta}, e como detector de face utilizamos o Viola Jones implementado pela biblioteca \textit{OpenCV 3.0} (\url{https://opencv-python-tutroals.readthedocs.io/en/latest/}), nesta implementação diferentemente da abordagem proposta, foi realizado uma normalização transformando a imagem em escala de cinza (ver Figura \ref{fig:implementadaarquitetura}). Esta implementação foi anteriormente a revisão sistemática da literatura, a revisão mostrou que as redes neurais de convolução sabem lidar com a imagem colorida, então, é desnecessário transformar em escala de cinza, no entanto, pode ser interessante em uma configuração de experimento verificar qual a melhor proposta com a imagem colorida ou em escala de cinza. 
+Para gerar o modelo utilizamos a base de dados \textit{FER-2013} tanto para treinar como para validar, esta base é bastante utilizada pela literatura e contém 28709 imagens de expressão facial com as seguintes emoções (classes): raiva, desgosto, medo, felicidade, tristeza, surpresa e neutralidade. Foi utilizado 2/3 da base de dados para treinamento e o restante para validação. A rede foi treinada por 140 épocas e alcançou os seguintes resultados expresso na matriz de confusão na Figura \ref{fig:confusionmatrix}.
+ 
 
 \begin{figure}
 \centering
@@ -140,16 +139,66 @@ Seguimos a abordagem proposta na Seção \ref{sec:abordagemproposta}, e como det
 \label{fig:confusionmatrix}
 \end{figure}
 
-\section{Resumo}\label{sec:considera}
-Foi possível verificar que o reconhecedor de emoção tem muita aplicação, iniciamos nossa aplicação no cenário real em uma prova de conceito na área de educação, no qual há muitas utilidades. Esta prova de conceito nos deu norte para a evolução desta proposta. Consequentemente foi iniciado o desenvolvimento do reconhecedor que esta proposta pretende gerar como contribuição. Há muitos trabalhos futuros, principalmente combinar as diversas técnicas de pré-processamento com as diversas arquiteturas de RNC juntamente com as bases de dados. A área de aprendizagem de máquina costuma ser bastante experimental e aparentemente temos bastante configuração de experimento para testar, até encontrar a melhor taxa de aprendizado da RNC.
+
+
+\subsection{Preparação dos Dados}\label{prepdados}
+A preparação dos dados consistiu na formação de três bases de dados: treino, teste e validação. A base de treino foi utilizada para treinar os algoritmos, geralmente é a base que tem mais instâncias. Uma base de treino formada erroneamente reflete nos modelos gerados ocasionando \textit{underfitting} (não aprendeu a resolver o problema) ou \textit{overfitting} (não aprendeu a generalizar o problema, apresenta super vício na base de treino), sendo assim, o treinamento da rede não converge para o melhor resultado. Diante disso, a preparação dos dados é essencial para obtenção de modelos com bons resultados. A base de teste é usada para validar a rede neural durante o treinamento após cada época calculando a função de perda. O valor de perda é importante para diagnosticar como está o treinamento, isto é, se o gradiente descendente está convergindo para o ponto de parada, ou seja, o momento certo de interromper o treinamento ou verificar se a rede neural apresenta \textit{underfitting} (ainda falta treinar) ou \textit{overfitting} (treinou muito, vício na base de treino). A base de validação é composta por instâncias totalmente desconhecidas pelo modelo, pois são imagens que não fizeram parte do treinamento. A base de validação seria uma espécie de teste para verificar como determinado modelo se comportaria no mundo real.  
+
+Um dos objetivos da revisão sistemática (ver Seção \ref{sec:revisaosistematica}) foi encontrar as bases de dados mais populares utilizadas pela comunidade. A Tabela \ref{table:database} apresenta as bases de dados localizadas na revisão sistemática. Os dados advindos dessas bases foram usadas neste estudo experimental. Partindo do pressuposto que as bases de dados aplicadas em aprendizagem de máquina devem ser bastantes diversificadas para gerar modelos generalistas. As bases de treino, teste e validação, foram formadas a partir da concatenação de todas as bases localizadas a fim de gerar diversificação nos dados na seguinte divisão: 50\% para treino e 25\% para teste e validação. Uma etapa de limpeza foi executada em todas as bases a fim de retirar amostras que possuem baixa representatividade para o problema. Essa etapa de limpeza consistiu na verificação da face seguindo a abordagem proposta na Seção \ref{sec:detect}, pois há várias imagens com forte ruídos, por exemplo, rotações com grau elevado, faces incompletas e imagens com faces de personagens de animação. Após o processo de limpeza, na Tabela \ref{table:basesdivisao} é mostrado como ficou a distribuição das imagens referente a divisão por base de treino, teste e validação. A Tabela \ref{table:distclasse} indica a distribuição das imagens referentes as classes (emoções), vale ressaltar que a emoção felicidade é a classe que tem mais instâncias representativas, ao contrário da emoção medo que possui a menor amostra.
+
+
+\begin{table}[]
+\centering
+\caption{As bases de dados foram concatenadas e divididas em três bases: treino, teste e validação. Na seguinte porcentagem: 50\% para treino e 25\% para teste e validação. }
+\label{table:basesdivisao}
+\begin{tabular}{lcccc}
+\hline
+\textbf{Base de Dados} & \multicolumn{1}{l}{\textbf{B. de Treino}} & \multicolumn{1}{l}{\textbf{B. de Teste}} & \multicolumn{1}{l}{\textbf{B. de Validação}} & \multicolumn{1}{l}{\textbf{Total de Imagens}} \\ \hline
+RAFD                   & 2408                                        & 1206                                       & 1205                                           & 4819                                          \\
+CIFE-TRAIN             & 4086                                        & 2042                                       & 2042                                           & 8170                                          \\
+CIFE-TEST              & 1759                                        & 879                                        & 878                                            & 3516                                          \\
+CK                     & 1509                                        & 754                                        & 755                                            & 3018                                          \\
+KDEF                   & 1466                                        & 735                                        & 733                                            & 2934                                          \\
+JAFFE                  & 105                                         & 53                                         & 55                                             & 213                                           \\
+NOVAEMOTIONS           & 16840                                       & 8418                                       & 8417                                           & 33675                                         \\
+FER                    & 11782                                       & 5892                                       & 5891                                           & 23565                                         \\
+Total de Imagens       & 39955                                       & 19979                                      & 19976                                          & 79910                                         \\ \hline
+\end{tabular}
+\end{table}
+
+
+
+\begin{table}[]
+\centering
+\caption{Distribuição das classes (emoções) nas bases de treino, teste e validação. As classes também foram divididas em: 50\% para treino e 25\% para teste e validação.}
+\label{table:distclasse}
+\begin{tabular}{lcccc}
+\hline
+\textbf{Classe}  & \multicolumn{1}{l}{\textbf{B. de Treino}} & \multicolumn{1}{l}{\textbf{B. de Teste}} & \multicolumn{1}{l}{\textbf{B. de Validação}} & \multicolumn{1}{l}{\textbf{Total de Imagens}} \\ \hline
+Raiva            & 3299                                        & 1650                                       & 1650                                           & 6599                                          \\
+Desgosto         & 2453                                        & 1226                                       & 1226                                           & 4905                                          \\
+Medo             & 2821                                        & 1411                                       & 1410                                           & 5642                                          \\
+Felicidade       & 13943                                       & 6971                                       & 6971                                           & 27885                                         \\
+Tristeza         & 4349                                        & 2175                                       & 2174                                           & 8698                                          \\
+Surpesa          & 6311                                        & 3156                                       & 3155                                           & 12622                                         \\
+Neutralidade     & 6779                                        & 3390                                       & 3390                                           & 13559                                         \\
+Total de Imagens & 39955                                       & 19979                                      & 19976                                          & 79910                                         \\ \hline
+\end{tabular}
+\end{table}
+
+
+\subsection{Materiais}
+Esse estudo experimental necessitou de alguns materiais. Para implementação da rede neural de convolução foi utilizado o \textit{framework Tensorflow} (\url{https://www.tensorflow.org/}) e a API de alto nível para \textit{tensorflow} a \textit{TFLearn} (\url{http://tflearn.org/}). A biblioteca \textit{OpenCV 3.0} (\url{https://opencv.org/}) para realizar processamento na imagem, e também, para detectar face, pois nesta biblioteca tem uma implementação do algoritmo Viola Jones que é o algoritmo selecionado para a abordagem proposta no Capítulo \ref{sec:abordagemproposta}.
+Os experimentos foram realizados em um computador com a seguinte configuração: \textit{GPU NVIDIA GEFORCE 930}, \textit{Intel Core-i7} e \textit{16 GB de RAM DDR4}. 
+
 
 
 % Please add the following required packages to your document preamble:
 % \usepackage{multirow}
 \begin{table}[]
 \centering
-\caption{Resultados experimentais de redes neurais convolução}
-\label{my-label}
+\caption{Resultados experimentais das redes neurais de convolução avaliando a base de validação.}
+\label{table:resultsexp}
 \begin{tabular}{llcccc}
 \hline
 \textbf{Arquitetura}                & \textbf{Emoção}       & \textbf{Precisão} & \textbf{Revocação} & \textbf{F1-score} & \textbf{Acurácia}               \\ \hline
@@ -179,3 +228,8 @@ Foi possível verificar que o reconhecedor de emoção tem muita aplicação, in
                                     & \textbf{Média/Total}  & \textbf{0.76}     & \textbf{0.76}      & \textbf{0.76}     &                                 \\ \hline
 \end{tabular}
 \end{table}
+
+
+
+\section{Resumo}\label{sec:considera}
+Foi possível verificar que o reconhecedor de emoção tem muita aplicação, iniciamos nossa aplicação no cenário real em uma prova de conceito na área de educação, no qual há muitas utilidades. Esta prova de conceito nos deu norte para a evolução desta proposta. Consequentemente foi iniciado o desenvolvimento do reconhecedor que esta proposta pretende gerar como contribuição. Há muitos trabalhos futuros, principalmente combinar as diversas técnicas de pré-processamento com as diversas arquiteturas de RNC juntamente com as bases de dados. A área de aprendizagem de máquina costuma ser bastante experimental e aparentemente temos bastante configuração de experimento para testar, até encontrar a melhor taxa de aprendizado da RNC.
