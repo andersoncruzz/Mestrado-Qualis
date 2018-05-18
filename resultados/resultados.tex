@@ -116,28 +116,7 @@ Finalmente, percebe-se que o \textit{framework} para classificação automática
 % Arquiteturas de Redes Neurais
 % Avaliação
 
-Um estudo experimental foi realizado a fim de comparar diversos tipos de arquiteutras de redes neurais de convolução. Este estudo tem como objetivo eleger a arquitetura que gerou o melhor modelo avaliando a precisão, revocação e acurácia.  
-
-
-Foi iniciado o desenvolvimento do reconhecedor de emoção, visto que, para trabalhar com redes profundas, especificamente com as redes neurais de convolução é necessário dispor de grandes quantidades de recursos computacionais relacionadas a memória e a processamento. Por isso, como ponto de partida optamos por uma arquitetura reduzida da AlexNet ilustrada na Figura \ref{fig:implementadaarquitetura}, utilizamos esta arquitetura para treinar e gerar um modelo para classificar emoções em expressões faciais.
-
-Para gerar o modelo utilizamos a base de dados \textit{FER-2013} tanto para treinar como para validar, esta base é bastante utilizada pela literatura e contém 28709 imagens de expressão facial com as seguintes emoções (classes): raiva, desgosto, medo, felicidade, tristeza, surpresa e neutralidade. Foi utilizado 2/3 da base de dados para treinamento e o restante para validação. A rede foi treinada por 140 épocas e alcançou os seguintes resultados expresso na matriz de confusão na Figura \ref{fig:confusionmatrix}.
- 
-
-\begin{figure}
-\centering
-\includegraphics[scale=0.57]{figuras/arquiteturaimplementada.png}
-\caption{Arquitetura Implementada de Rede Neural de Convolução}
-\label{fig:implementadaarquitetura}
-\end{figure}
-
-
-\begin{figure}
-\centering
-\includegraphics[scale=0.8]{figuras/confusion-matrix-75split-140epo.png}
-\caption{Matriz de Confusão com 140 épocas de treinamento}
-\label{fig:confusionmatrix}
-\end{figure}
+Um estudo experimental foi realizado a fim de comparar as seguintes arquiteturas de redes neurais de convolução: Alexnet, Residual Net e GoogLeNet. Este estudo tem como objetivo eleger a arquitetura que gerou o melhor modelo avaliando a precisão, revocação e acurácia.  
 
 
 
@@ -187,11 +166,67 @@ Total de Imagens & 39955                                       & 19979          
 \end{table}
 
 
-\subsection{Materiais}
-Esse estudo experimental necessitou de alguns materiais. Para implementação da rede neural de convolução foi utilizado o \textit{framework Tensorflow} (\url{https://www.tensorflow.org/}) e a API de alto nível para \textit{tensorflow} a \textit{TFLearn} (\url{http://tflearn.org/}). A biblioteca \textit{OpenCV 3.0} (\url{https://opencv.org/}) para realizar processamento na imagem, e também, para detectar face, pois nesta biblioteca tem uma implementação do algoritmo Viola Jones que é o algoritmo selecionado para a abordagem proposta no Capítulo \ref{sec:abordagemproposta}.
+\subsection{Materiais}\label{sec:material}
+Para a realização desse estudo experimental foi necessário o uso de alguns materiais. Para implementação da rede neural de convolução foi utilizado o \textit{framework Tensorflow} (\url{https://www.tensorflow.org/}) e a API de alto nível para \textit{tensorflow} a \textit{TFLearn} (\url{http://tflearn.org/}). A biblioteca \textit{OpenCV 3.0} (\url{https://opencv.org/}) para realizar processamento na imagem, e também, para detectar face, pois nesta biblioteca tem uma implementação do algoritmo Viola Jones que é o algoritmo selecionado para a abordagem proposta no Capítulo \ref{sec:abordagemproposta}.
 Os experimentos foram realizados em um computador com a seguinte configuração: \textit{GPU NVIDIA GEFORCE 930}, \textit{Intel Core-i7} e \textit{16 GB de RAM DDR4}. 
 
 
+\subsection{Arquiteturas}
+Este estudo experimental utilizou três arquiteturas de redes neurais de convolução: Alexnet, GoogLeNet e Residual Net. A arquitetura Alexnet foi implementada de forma original descrita na Tabela \ref{alexnet}.  A GoogLeNet tem diversas variantes denominadas Inception, este estudo considerou a Inception V3 que está ilustrada na Figura \ref{fig:inceptionV3}. A Residual Net também tem várias variantes e a selecionada para o estudo foi a que possui 34 camadas denominada ResNet-34 mostrada na Figura \ref{fig:resnet-34}. O motivo da escolha tanto para Inception V3 como para ResNet-34  
+foi devido a limitação de hardware que este projeto dispõe para execução de experimentos, portanto selecionando as variantes menos complexas destas arquiteturas que por natureza são complexas e profundas. 
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.33]{figuras/inceptionV3.png}
+\caption{Arquitetura Inception V3}
+\label{fig:inceptionV3}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.83]{figuras/resnet-34.png}
+\caption{Arquitetura ResNet-34}
+\label{fig:resnet-34}
+\end{figure}
+
+
+
+\subsection{Treinamento}
+O treinamento consistiu no uso dos materiais descritos na Seção \ref{sec:material} e das bases de treino e teste descritas nas Tabelas \ref{table:basesdivisao} e \ref{table:distclasse}. A estratégia adotada durante a fase de treinamento foi salvar vários modelos enquanto a função de perda convergia para serem utilizadas em comparações. Para todos os experimentos o tamanho de batch foi de 64 imagens e a taxa de aprendizado foi de 0.001 para Alexnet e Inception-v3, no entanto para ResNet-34 foi de 0.1, obviamente isso resultou que a ResNet-34 treinasse mais rápida que pode ser constatada pela Figura \ref{fig:loss-val}. Esses são os parâmetros padrões de cada arquitetura, por isso não houve qualquer alteração. 
+
+As Figuras \ref{fig:acc-train} e \ref{fig:acc-val} mostram respectivamente o gráfico de acurácia na base de treino e teste durante o treinamento. Para cada arquitetura há uma linha na vertical demarcando o passo em que foi gerado o modelo que obteve as melhores taxas de acurácia, precisão e revocação, e são esses os modelos selecionados para a discussão acerca deste capítulo. Por exemplo, o melhor modelo da arquitetura Alexnet foi gerado no passo 17800, a Residual Net no passo 11250 e a Inception V3 em 34000. As Figuras \ref{fig:loss-train} e \ref{fig:loss-val} apresenta o gráfico da função de perda na base de treino e teste respectivamente ao longo das épocas.
+
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.5]{figuras/accuracy.png}
+\caption{Gráfico de Acurácia na Base de Treino}
+\label{fig:acc-train}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.5]{figuras/accuracy_val.png}
+\caption{Gráfico de Acurácia na Base de Teste}
+\label{fig:acc-val}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.5]{figuras/loss.png}
+\caption{Gráfico da Função de Perda na Base de Treino}
+\label{fig:loss-train}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.5]{figuras/loss-val.png}
+\caption{Gráfico da Função de Perda na Base de Teste}
+\label{fig:loss-val}
+\end{figure}
+
+
+\subsection{Discussões}
 
 % Please add the following required packages to your document preamble:
 % \usepackage{multirow}
@@ -218,7 +253,7 @@ Os experimentos foram realizados em um computador com a seguinte configuração:
                                     & Surpresa              & 0.85              & 0.79               & 0.82              &                                 \\
                                     & Neutralidade          & 0.59              & 0.62               & 0.61              &                                 \\
                                     & Média/Total           & 0.70              & 0.70               & 0.70              &                                 \\ \hline
-\multirow{8}{*}{\textbf{Resnet-32}} & \textbf{Raiva}        & \textbf{0.69}     & \textbf{0.57}      & \textbf{0.62}     & \multirow{8}{*}{\textbf{0.757}} \\
+\multirow{8}{*}{\textbf{ResNet-34}} & \textbf{Raiva}        & \textbf{0.69}     & \textbf{0.57}      & \textbf{0.62}     & \multirow{8}{*}{\textbf{0.757}} \\
                                     & \textbf{Desgosto}     & \textbf{0.79}     & \textbf{0.66}      & \textbf{0.72}     &                                 \\
                                     & \textbf{Medo}         & \textbf{0.45}     & \textbf{0.50}      & \textbf{0.47}     &                                 \\
                                     & \textbf{Felicidade}   & \textbf{0.90}     & \textbf{0.89}      & \textbf{0.90}     &                                 \\
