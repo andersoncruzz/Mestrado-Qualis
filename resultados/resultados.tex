@@ -2,7 +2,7 @@
 Neste capítulo os resultados parciais são apresentados divididos nas seguintes seções. A Seção \ref{sec:prova} destaca pontos relevantes de um artigo publicado no Simpósio Brasileiro de Informática na Educação (SBIE) responsável em nortear esta proposta. A Seção \ref{sec:reconhecedor} apresenta um estudo experimental comparativo sobre as arquiteturas de redes neurais de convolução relacionado ao domínio do problema e enquanto a Seção \ref{sec:considera} o resumo deste capítulo.   
 
 
-\section{Prova de Conceito}\label{sec:prova}
+\section{\textit{Framework} para coleta e inferência de estados emocionais de estudantes}\label{sec:prova}
 Inicialmente, uma prova de conceito foi realizada para nortear o andamento deste projeto. O resultado desta prova de conceito foi publicada no Simpósio Brasileiro de Informática na Educação (SBIE) 2017 \citep{cruz2017framework}. Este trabalho consistiu na utilização da API da \textit{Microsoft Cognitives Services} um serviço na nuvem que oferece um conjunto de aplicações cognitivas, inclusive um reconhecedor de emoções via expressão facial. Esta experiência foi bastante positiva possibilitando ponderar as vantagens e desvantagens desta API, e assim, nortear a construção do reconhecedor de emoções proposto. A contribuição principal deste trabalho está em reconhecer emoções em tempo real, em um cenário real e de forma automática, com precisão aceitável em um ambiente educacional, correlacionando as emoções detectadas com o desempenho escolar em um teste. 
 
 A revisão sistemática (ver Capítulo \ref{sec:revisaosistematica}) mostrou que os pesquisadores da área de reconhecimento de emoção ainda estão tímidos para colocar esses reconhecedores no mundo real. Desta forma, a utilização em cenários reais passa a ser um ponto de contribuição atestando que essas tecnologias estão amadurecendo possibilitando a integração a outros tipos de sistemas principalmente para tomadas de decisão, recomendações, análises de comportamento e entre outros. Contudo, funcionar no cenário real não é uma tarefa trivial, o reconhecedor deve alcançar uma excelente taxa de generalização, o mundo real é desafiador por haver muitas variações da face e do ambiente dificultando a precisão do algoritmo.  
@@ -108,7 +108,7 @@ Como trabalho futuro, pretendemos investigar a mudança temporal dos estados emo
 
 Finalmente, percebe-se que o \textit{framework} para classificação automática de emoções a partir de imagens necessita de um maior volume de dados, para reduzir eventuais erros de classificação, e permitir a classificação de novos tipos de emoções. Portanto, está nos nossos planos investigar alternativas para amenizar erros de classificação e melhorar a acurácia do \textit{framework}.
 
-\section{Avaliação Experimental}\label{sec:avalexp}
+\section{Avaliação Experimental de Redes Neurais de Convolução}\label{sec:avalexp}
 % Base de dados
 % Metodologia de Treinamento
 % SW, HW, Setup
@@ -200,33 +200,36 @@ As Figuras \ref{fig:acc-train} e \ref{fig:acc-val} mostram respectivamente o gr�
 \begin{figure}
 \centering
 \includegraphics[scale=0.5]{figuras/accuracy.png}
-\caption{Gráfico de Acurácia na Base de Treino}
+\caption{Gráfico de Acurácia na Base de Treino. Linhas vertificais indicam o melhor modelo }
 \label{fig:acc-train}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[scale=0.5]{figuras/accuracy_val.png}
-\caption{Gráfico de Acurácia na Base de Teste}
+\caption{Gráfico de Acurácia na Base de Teste.}
 \label{fig:acc-val}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[scale=0.5]{figuras/loss.png}
-\caption{Gráfico da Função de Perda na Base de Treino}
+\caption{Gráfico da Função de Perda na Base de Treino.}
 \label{fig:loss-train}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[scale=0.5]{figuras/loss-val.png}
-\caption{Gráfico da Função de Perda na Base de Teste}
+\caption{Gráfico da Função de Perda na Base de Teste.}
 \label{fig:loss-val}
 \end{figure}
 
 
 \subsection{Discussões}
+
+
+
 
 % Please add the following required packages to your document preamble:
 % \usepackage{multirow}
