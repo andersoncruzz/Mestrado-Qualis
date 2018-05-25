@@ -1,0 +1,25 @@
+Base de Dados,Arquitetura,Emoção,Precisão,Revocação,F1-score,Acurácia
+FER,alexnet-17800,Raiva,0.39,0.5,0.44,0.543
+FER,alexnet-17800,Desgosto,0.45,0.17,0.25,0.543
+FER,alexnet-17800,Medo,0.37,0.33,0.35,0.543
+FER,alexnet-17800,Felicidade,0.74,0.79,0.76,0.543
+FER,alexnet-17800,Tristeza,0.4,0.29,0.34,0.543
+FER,alexnet-17800,Surpresa,0.72,0.64,0.67,0.543
+FER,alexnet-17800,Neutralidade,0.49,0.52,0.51,0.543
+FER,alexnet-17800,Média/Total,0.54,0.54,0.54,0.543
+FER,inceptionV3-34000,Raiva,0.43,0.4,0.41,0.529
+FER,inceptionV3-34000,Desgosto,0.13,0.25,0.17,0.529
+FER,inceptionV3-34000,Medo,0.39,0.36,0.37,0.529
+FER,inceptionV3-34000,Felicidade,0.81,0.77,0.79,0.529
+FER,inceptionV3-34000,Tristeza,0.29,0.38,0.32,0.529
+FER,inceptionV3-34000,Surpresa,0.72,0.64,0.68,0.529
+FER,inceptionV3-34000,Neutralidade,0.49,0.46,0.47,0.529
+FER,inceptionV3-34000,Média/Total,0.55,0.53,0.54,0.529
+FER,resnet-11250,Raiva,0.61,0.42,0.5,0.604
+FER,resnet-11250,Desgosto,0.69,0.28,0.39,0.604
+FER,resnet-11250,Medo,0.35,0.47,0.4,0.604
+FER,resnet-11250,Felicidade,0.87,0.81,0.84,0.604
+FER,resnet-11250,Tristeza,0.41,0.42,0.41,0.604
+FER,resnet-11250,Surpresa,0.71,0.76,0.73,0.604
+FER,resnet-11250,Neutralidade,0.56,0.61,0.58,0.604
+FER,resnet-11250,Média/Total,0.62,0.6,0.61,0.604

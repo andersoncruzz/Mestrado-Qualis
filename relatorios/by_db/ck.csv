@@ -1,0 +1,25 @@
+Base de Dados,Arquitetura,Emoção,Precisão,Revocação,F1-score,Acurácia
+CK,alexnet-17800,Raiva,0.91,1,0.95,0.96
+CK,alexnet-17800,Desgosto,0.98,0.97,0.98,0.96
+CK,alexnet-17800,Medo,0.89,0.96,0.92,0.96
+CK,alexnet-17800,Felicidade,0.99,0.99,0.99,0.96
+CK,alexnet-17800,Tristeza,0.98,0.84,0.91,0.96
+CK,alexnet-17800,Surpresa,1,0.94,0.97,0.96
+CK,alexnet-17800,Neutralidade,0,0,0,0.96
+CK,alexnet-17800,Média/Total,0.97,0.96,0.96,0.96
+CK,inceptionV3-34000,Raiva,0.93,0.94,0.93,0.954
+CK,inceptionV3-34000,Desgosto,0.96,0.94,0.95,0.954
+CK,inceptionV3-34000,Medo,0.89,0.96,0.92,0.954
+CK,inceptionV3-34000,Felicidade,0.99,0.98,0.99,0.954
+CK,inceptionV3-34000,Tristeza,0.91,0.97,0.94,0.954
+CK,inceptionV3-34000,Surpresa,1,0.94,0.97,0.954
+CK,inceptionV3-34000,Neutralidade,0,0,0,0.954
+CK,inceptionV3-34000,Média/Total,0.96,0.95,0.96,0.954
+CK,resnet-11250,Raiva,0.97,0.96,0.97,0.969
+CK,resnet-11250,Desgosto,1,0.92,0.96,0.969
+CK,resnet-11250,Medo,0.91,0.99,0.95,0.969
+CK,resnet-11250,Felicidade,0.98,0.99,0.99,0.969
+CK,resnet-11250,Tristeza,0.94,0.96,0.95,0.969
+CK,resnet-11250,Surpresa,0.98,0.99,0.99,0.969
+CK,resnet-11250,Neutralidade,0,0,0,0.969
+CK,resnet-11250,Média/Total,0.97,0.97,0.97,0.969

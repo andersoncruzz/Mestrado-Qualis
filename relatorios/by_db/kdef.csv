@@ -1,0 +1,25 @@
+Base de Dados,Arquitetura,Emoção,Precisão,Revocação,F1-score,Acurácia
+KDEF,alexnet-17800,Raiva,0.65,0.59,0.62,0.624
+KDEF,alexnet-17800,Desgosto,0.6,0.79,0.68,0.624
+KDEF,alexnet-17800,Medo,0.48,0.43,0.45,0.624
+KDEF,alexnet-17800,Felicidade,0.8,0.93,0.86,0.624
+KDEF,alexnet-17800,Tristeza,0.52,0.4,0.45,0.624
+KDEF,alexnet-17800,Surpresa,0.81,0.61,0.7,0.624
+KDEF,alexnet-17800,Neutralidade,0.52,0.62,0.57,0.624
+KDEF,alexnet-17800,Média/Total,0.63,0.62,0.62,0.624
+KDEF,inceptionV3-34000,Raiva,0.51,0.53,0.52,0.587
+KDEF,inceptionV3-34000,Desgosto,0.62,0.45,0.52,0.587
+KDEF,inceptionV3-34000,Medo,0.54,0.36,0.43,0.587
+KDEF,inceptionV3-34000,Felicidade,0.93,0.87,0.9,0.587
+KDEF,inceptionV3-34000,Tristeza,0.34,0.5,0.41,0.587
+KDEF,inceptionV3-34000,Surpresa,0.76,0.8,0.78,0.587
+KDEF,inceptionV3-34000,Neutralidade,0.54,0.6,0.57,0.587
+KDEF,inceptionV3-34000,Média/Total,0.61,0.59,0.59,0.587
+KDEF,resnet-11250,Raiva,0.7,0.7,0.7,0.751
+KDEF,resnet-11250,Desgosto,0.65,0.88,0.75,0.751
+KDEF,resnet-11250,Medo,0.73,0.44,0.55,0.751
+KDEF,resnet-11250,Felicidade,0.94,0.99,0.96,0.751
+KDEF,resnet-11250,Tristeza,0.69,0.7,0.7,0.751
+KDEF,resnet-11250,Surpresa,0.73,0.9,0.8,0.751
+KDEF,resnet-11250,Neutralidade,0.86,0.66,0.75,0.751
+KDEF,resnet-11250,Média/Total,0.76,0.75,0.74,0.751

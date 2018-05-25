@@ -1,0 +1,25 @@
+Base de Dados,Arquitetura,Emoção,Precisão,Revocação,F1-score,Acurácia
+CIFE-TEST,alexnet-17800,Raiva,0.58,0.7,0.63,0.626
+CIFE-TEST,alexnet-17800,Desgosto,0.35,0.38,0.36,0.626
+CIFE-TEST,alexnet-17800,Medo,0.46,0.35,0.4,0.626
+CIFE-TEST,alexnet-17800,Felicidade,0.72,0.8,0.76,0.626
+CIFE-TEST,alexnet-17800,Tristeza,0.72,0.61,0.66,0.626
+CIFE-TEST,alexnet-17800,Surpresa,0.73,0.62,0.67,0.626
+CIFE-TEST,alexnet-17800,Neutralidade,0.5,0.51,0.5,0.626
+CIFE-TEST,alexnet-17800,Média/Total,0.63,0.63,0.62,0.626
+CIFE-TEST,inceptionV3-34000,Raiva,0.62,0.62,0.62,0.613
+CIFE-TEST,inceptionV3-34000,Desgosto,0.26,0.3,0.28,0.613
+CIFE-TEST,inceptionV3-34000,Medo,0.47,0.46,0.46,0.613
+CIFE-TEST,inceptionV3-34000,Felicidade,0.86,0.79,0.83,0.613
+CIFE-TEST,inceptionV3-34000,Tristeza,0.56,0.54,0.55,0.613
+CIFE-TEST,inceptionV3-34000,Surpresa,0.7,0.61,0.65,0.613
+CIFE-TEST,inceptionV3-34000,Neutralidade,0.45,0.57,0.5,0.613
+CIFE-TEST,inceptionV3-34000,Média/Total,0.63,0.61,0.62,0.613
+CIFE-TEST,resnet-11250,Raiva,0.78,0.6,0.68,0.687
+CIFE-TEST,resnet-11250,Desgosto,0.65,0.34,0.45,0.687
+CIFE-TEST,resnet-11250,Medo,0.4,0.42,0.41,0.687
+CIFE-TEST,resnet-11250,Felicidade,0.84,0.87,0.85,0.687
+CIFE-TEST,resnet-11250,Tristeza,0.66,0.71,0.69,0.687
+CIFE-TEST,resnet-11250,Surpresa,0.62,0.81,0.7,0.687
+CIFE-TEST,resnet-11250,Neutralidade,0.61,0.6,0.6,0.687
+CIFE-TEST,resnet-11250,Média/Total,0.69,0.69,0.68,0.687
