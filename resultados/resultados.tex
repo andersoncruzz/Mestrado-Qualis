@@ -339,7 +339,8 @@ As Figuras \ref{fig:acc-train} e \ref{fig:acc-val} mostram respectivamente o gr�
 
 A Tabela \ref{table:resultsexp} apresenta os resultados das redes neurais de convolução avaliando a base de validação geral. Podemos ver....
 
-Já a Tabela \ref{table:resultsexpbybase} apresenta os resultados das redes neurais de conovolução avaliando base por base....
+As Tabelas \ref{table:cife-test}, \ref{table:cife-train}, \ref{table:ck}, \ref{table:fer}, \ref{table:jaffe}, \ref{table:kdef}, \ref{table:novaemotions} e \ref{table:rafd} apresentam os resultados das redes neurais de conovolução avaliando as bases de validação: \textit{CIFE-Train}, \textit{CIFE-Test}, \textit{CK}, \textit{FER}, \textit{JAFFE}, \textit{KDEF}, \textit{NovaEmotions} e \textit{RAFD}, respectivamente, 
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -353,7 +354,7 @@ Já a Tabela \ref{table:resultsexpbybase} apresenta os resultados das redes neur
 % \usepackage{multirow}
 \begin{table}[]
 \centering
-\caption{CIFE-test}
+\caption{Resultados experimentais das redes neurais de convolução avaliando a base de validação CIFE-Test}
 \label{table:cife-test}
 \begin{tabular}{llcccc}
 \hline
@@ -390,7 +391,7 @@ Já a Tabela \ref{table:resultsexpbybase} apresenta os resultados das redes neur
 % \usepackage{multirow}
 \begin{table}[]
 \centering
-\caption{CIFE-train}
+\caption{Resultados experimentais das redes neurais de convolução avaliando a base de validação CIFE-Train}
 \label{table:cife-train}
 \begin{tabular}{llcccc}
 \hline
@@ -428,7 +429,7 @@ Já a Tabela \ref{table:resultsexpbybase} apresenta os resultados das redes neur
 % \usepackage{multirow}
 \begin{table}[]
 \centering
-\caption{CK}
+\caption{Resultados experimentais das redes neurais de convolução avaliando a base de validação CK}
 \label{table:ck}
 \begin{tabular}{llcccc}
 \hline
@@ -465,7 +466,7 @@ Já a Tabela \ref{table:resultsexpbybase} apresenta os resultados das redes neur
 % \usepackage{multirow}
 \begin{table}[]
 \centering
-\caption{FER}
+\caption{Resultados experimentais das redes neurais de convolução avaliando a base de validação FER}
 \label{table:fer}
 \begin{tabular}{llcccc}
 \hline
@@ -502,7 +503,7 @@ Já a Tabela \ref{table:resultsexpbybase} apresenta os resultados das redes neur
 % \usepackage{multirow}
 \begin{table}[]
 \centering
-\caption{JAFFE}
+\caption{Resultados experimentais das redes neurais de convolução avaliando a base de validação JAFFE}
 \label{table:jaffe}
 \begin{tabular}{llcccc}
 \hline
@@ -540,7 +541,7 @@ Já a Tabela \ref{table:resultsexpbybase} apresenta os resultados das redes neur
 % \usepackage{multirow}
 \begin{table}[]
 \centering
-\caption{KDEF}
+\caption{Resultados experimentais das redes neurais de convolução avaliando a base de validação KDEF}
 \label{table:kdef}
 \begin{tabular}{llcccc}
 \hline
@@ -577,7 +578,7 @@ Já a Tabela \ref{table:resultsexpbybase} apresenta os resultados das redes neur
 % \usepackage{multirow}
 \begin{table}[]
 \centering
-\caption{NovaEmotions}
+\caption{Resultados experimentais das redes neurais de convolução avaliando a base de validação NovaEmotions}
 \label{table:novaemotions}
 \begin{tabular}{llcccc}
 \hline
@@ -614,7 +615,7 @@ Já a Tabela \ref{table:resultsexpbybase} apresenta os resultados das redes neur
 % \usepackage{multirow}
 \begin{table}[]
 \centering
-\caption{RAFD}
+\caption{Resultados experimentais das redes neurais de convolução avaliando a base de validação RAFD}
 \label{table:rafd}
 \begin{tabular}{llcccc}
 \hline
@@ -650,6 +651,7 @@ Já a Tabela \ref{table:resultsexpbybase} apresenta os resultados das redes neur
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%
+\begin{comment}
 \begin{tiny}
 \begin{center}
 \begin{longtable}{l|l|l|c|c|c|c}
@@ -854,6 +856,7 @@ Já a Tabela \ref{table:resultsexpbybase} apresenta os resultados das redes neur
 \end{longtable}
 \end{center}
 \end{tiny}
+\end{comment}
 
 \section{Resumo}\label{sec:considera}
 Foi possível verificar que o reconhecedor de emoção tem muita aplicação, iniciamos nossa aplicação no cenário real em uma prova de conceito na área de educação, no qual há muitas utilidades. Esta prova de conceito nos deu norte para a evolução desta proposta. Consequentemente foi iniciado o desenvolvimento do reconhecedor que esta proposta pretende gerar como contribuição. Há muitos trabalhos futuros, principalmente combinar as diversas técnicas de pré-processamento com as diversas arquiteturas de RNC juntamente com as bases de dados. A área de aprendizagem de máquina costuma ser bastante experimental e aparentemente temos bastante configuração de experimento para testar, até encontrar a melhor taxa de aprendizado da RNC.
