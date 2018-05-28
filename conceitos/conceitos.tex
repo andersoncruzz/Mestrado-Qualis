@@ -207,6 +207,11 @@ conv3-128                                                     & conv3-128       
 \end{tabular}
 \end{table}
 
+\subsection{Residual Network}
+A Residual Network (ou ResNet) foi desenvolvida por \cite{he2016deep} e foi a técnica vencedora do desafio ILSVRC 2015. A ResNet foi avaliada na base de teste do ImageNet que tinha 1000 classes e alcançou 3.6\% em taxa de erro no top-5, ou seja, quando uma imagem é classificada este tipo de avaliação consiste na verificação das 5 classes com maior probabilidade, e caso esta imagem pertencer ao grupo das 5 classes caracteriza-se uma classificação correta. A ResNet proposta para o concurso tinha 152 camadas caracterizando uma rede muito profunda. 
+
+O segredo desta técnica consiste na composição dos blocos residuais. Tais blocos trazem novidades     
+
 
 \subsection{\textit{Ensemble}}
 Suponha uma questão complexa perguntada aleatoriamente para milhões de pessoas, então, todas as respostas são agregadas para obter o resultado. Em muitos casos, a resposta agregada é melhor do que a de um especialista. Isto é conhecido como sabedoria popular. Similarmente, se agregar as classificações de uma determinada instância oriunda de um grupo de RNCs e, frequentemente, tem mais acertos do que a classificação de uma única RNC. Um grupo de RNCs ou outros tipos de classificadores e regressores são chamados de \textit{ensemble} \citep{geron2017hands}. Geralmente, quem trabalha com \textit{ensemble} no problema de reconhecimento de emoção tem calculada a média das probabilidades estimadas pelas diversas RNCs para decidir qual a classificação final da expressão facial.
