@@ -2,7 +2,8 @@
 Neste capítulo os resultados parciais são apresentados divididos nas seguintes seções. A Seção \ref{sec:prova} destaca pontos relevantes de um artigo publicado no Simpósio Brasileiro de Informática na Educação (SBIE) responsável em nortear esta proposta entitulado como Framework para coleta e inferência de estados emocionais de estudantes. A Seção \ref{sec:reconhecedor} apresenta um estudo experimental comparativo sobre as arquiteturas de redes neurais de convolução relacionado ao domínio do problema e enquanto a Seção \ref{sec:considera} o resumo deste capítulo.   
 
 
-\section{\textit{Framework} para coleta e inferência de estados emocionais de estudantes}\label{sec:prova}
+%\section{\textit{Framework} para coleta e inferência de estados emocionais de estudantes}\label{sec:prova}
+\section{Prova de Conceito}\label{sec:prova}
 Inicialmente, uma prova de conceito foi realizada para nortear o andamento deste projeto. Este trabalho \citep{cruz2017framework} consistiu na utilização da API da \textit{Microsoft Cognitives Services} um serviço na nuvem que oferece um conjunto de aplicações cognitivas, inclusive um reconhecedor de emoções via expressão facial. Esta experiência foi bastante positiva possibilitando ponderar as vantagens e desvantagens desta API, e assim, nortear a construção do reconhecedor de emoções proposto. A contribuição principal deste trabalho está em reconhecer emoções em tempo real, em um cenário real e de forma automática, com precisão aceitável em um ambiente educacional, correlacionando as emoções detectadas com o desempenho escolar em um teste. 
 
 A revisão sistemática (ver Capítulo \ref{sec:revisaosistematica}) mostrou que os pesquisadores da área de reconhecimento de emoção ainda estão tímidos para colocar esses reconhecedores no mundo real. Desta forma, a utilização em cenários reais passa a ser um ponto de contribuição atestando que essas tecnologias estão amadurecendo possibilitando a integração a outros tipos de sistemas principalmente para tomadas de decisão, recomendações, análises de comportamento e entre outros. Contudo, funcionar no cenário real não é uma tarefa trivial, o reconhecedor deve alcançar uma excelente taxa de generalização, o mundo real é desafiador por haver muitas variações da face e do ambiente dificultando a precisão do algoritmo.  
@@ -261,7 +262,7 @@ foi devido a limitação de hardware que este projeto dispõe para execução de
 
 
 \subsection{Treinamento}
-O treinamento consistiu no uso dos materiais descritos na Seção \ref{sec:material} e das bases de treino e teste descritas nas Tabelas \ref{table:basesdivisao} e \ref{table:distclasse}. A estratégia adotada durante a fase de treinamento foi salvar vários modelos enquanto a função de perda convergia para serem utilizadas em comparações. Para todos os experimentos o tamanho de batch foi de 64 imagens e a taxa de aprendizado foi de 0.001 para Alexnet e Inception-v3, no entanto para ResNet-34 foi de 0.1, obviamente isso resultou que a ResNet-34 treinasse mais rápida que pode ser constatada pela Figura \ref{fig:loss-val}. Esses são os parâmetros padrões de cada arquitetura, por isso não houve qualquer alteração. 
+O treinamento consistiu no uso dos materiais descritos na Seção \ref{sec:material} e das bases de treino e teste descritas nas Tabelas \ref{table:basesdivisao} e \ref{table:distclasse}. A estratégia adotada durante a fase de treinamento foi salvar vários modelos enquanto a função de perda convergia para serem utilizadas em comparações. Para todos os experimentos o tamanho de batch foi de 64 imagens e a taxa de aprendizado foi de 0.001 para Alexnet e Inception-v3, no entanto para ResNet-34 foi de 0.1, obviamente isso resultou que a ResNet-34 treinasse mais rápida que as demais, fato que pode ser constatado pela Figura \ref{fig:loss-val}. Esses são os parâmetros padrões de cada arquitetura, por isso não houve qualquer alteração. 
 
 As Figuras \ref{fig:acc-train} e \ref{fig:acc-val} mostram respectivamente o gráfico de acurácia na base de treino e teste durante o treinamento. Para cada arquitetura há uma linha na vertical demarcando o passo em que foi gerado o modelo que obteve as melhores taxas de acurácia, precisão e revocação, e são esses os modelos selecionados para a discussão acerca deste capítulo. Por exemplo, o melhor modelo da arquitetura Alexnet foi gerado no passo 17800, a Residual Net no passo 11250 e a Inception V3 em 34000. As Figuras \ref{fig:loss-train} e \ref{fig:loss-val} apresenta o gráfico da função de perda na base de treino e teste respectivamente ao longo das épocas.
 
@@ -269,28 +270,28 @@ As Figuras \ref{fig:acc-train} e \ref{fig:acc-val} mostram respectivamente o gr�
 \begin{figure}
 \centering
 \includegraphics[scale=0.5]{figuras/accuracy.png}
-\caption{Gráfico de Acurácia na Base de Treino. Linhas vertificais indicam o melhor modelo }
+\caption{Gráfico de Acurácia na Base de Treino. As linhas vertificais indicam o melhor modelo. }
 \label{fig:acc-train}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[scale=0.5]{figuras/accuracy_val.png}
-\caption{Gráfico de Acurácia na Base de Teste.}
+\caption{Gráfico de Acurácia na Base de Teste. As linhas vertificais indicam o melhor modelo.}
 \label{fig:acc-val}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[scale=0.5]{figuras/loss.png}
-\caption{Gráfico da Função de Perda na Base de Treino.}
+\caption{Gráfico da Função de Perda na Base de Treino. As linhas vertificais indicam o melhor modelo.}
 \label{fig:loss-train}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[scale=0.5]{figuras/loss-val.png}
-\caption{Gráfico da Função de Perda na Base de Teste.}
+\caption{Gráfico da Função de Perda na Base de Teste. As linhas vertificais indicam o melhor modelo.}
 \label{fig:loss-val}
 \end{figure}
 
@@ -337,9 +338,6 @@ As Figuras \ref{fig:acc-train} e \ref{fig:acc-val} mostram respectivamente o gr�
 \end{table}
 
 
-A Tabela \ref{table:resultsexp} apresenta os resultados das redes neurais de convolução avaliando a base de validação geral. Podemos ver....
-
-As Tabelas \ref{table:cife-test}, \ref{table:cife-train}, \ref{table:ck}, \ref{table:fer}, \ref{table:jaffe}, \ref{table:kdef}, \ref{table:novaemotions} e \ref{table:rafd} apresentam os resultados das redes neurais de conovolução avaliando as bases de validação: \textit{CIFE-Train}, \textit{CIFE-Test}, \textit{CK}, \textit{FER}, \textit{JAFFE}, \textit{KDEF}, \textit{NovaEmotions} e \textit{RAFD}, respectivamente, 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -857,6 +855,11 @@ As Tabelas \ref{table:cife-test}, \ref{table:cife-train}, \ref{table:ck}, \ref{t
 \end{center}
 \end{tiny}
 \end{comment}
+
+A Tabela \ref{table:resultsexp} apresenta os resultados das redes neurais de convolução avaliando a base de validação geral. Podemos ver....
+
+As Tabelas \ref{table:cife-test}, \ref{table:cife-train}, \ref{table:ck}, \ref{table:fer}, \ref{table:jaffe}, \ref{table:kdef}, \ref{table:novaemotions} e \ref{table:rafd} apresentam os resultados das redes neurais de conovolução avaliando as bases de validação: \textit{CIFE-Train}, \textit{CIFE-Test}, \textit{CK}, \textit{FER}, \textit{JAFFE}, \textit{KDEF}, \textit{NovaEmotions} e \textit{RAFD}, respectivamente, 
+
 
 \section{Resumo}\label{sec:considera}
 Foi possível verificar que o reconhecedor de emoção tem muita aplicação, iniciamos nossa aplicação no cenário real em uma prova de conceito na área de educação, no qual há muitas utilidades. Esta prova de conceito nos deu norte para a evolução desta proposta. Consequentemente foi iniciado o desenvolvimento do reconhecedor que esta proposta pretende gerar como contribuição. Há muitos trabalhos futuros, principalmente combinar as diversas técnicas de pré-processamento com as diversas arquiteturas de RNC juntamente com as bases de dados. A área de aprendizagem de máquina costuma ser bastante experimental e aparentemente temos bastante configuração de experimento para testar, até encontrar a melhor taxa de aprendizado da RNC.

@@ -1,5 +1,5 @@
 \chapter{Referencial Teórico}\label{sec:conceitos}
-Neste capítulo são introduzidos os conceitos necessários para o entendimento deste trabalho e está organizado da seguinte forma. A Seção \ref{sec:recemo} define o que é o reconhecimento de emoção e os tipos de reconhecimento. A Seção \ref{sec:expfacia} fundamenta a expressão facial emocional e mostra as expressões básicas existentes. A Seção \ref{sec:apm} conceitua a área de aprendizagem de máquina. A Seção \ref{sec:pci} apresenta o processo de classificação de imagem. A Seção \ref{sec:tecnic} revisa as técnicas de pré-processamento que são utilizadas para eliminação de ruídos de uma imagem. As Seções \ref{sec:rna} e \ref{sec:rnc} conceituam os aspectos básicos das redes neurais artificiais e das redes neurais de convolução, respectivamente. A Seção \ref{sec:arc} descreve as arquiteturas de redes neurais de convolução utilizadas por este trabalho e para concluir a Seção \ref{sec:considf} faz um resumo acerca deste capítulo.   
+Neste capítulo são introduzidos os conceitos necessários para o entendimento deste trabalho e está organizado da seguinte forma. A Seção \ref{sec:recemo} define o que é o reconhecimento de emoção e os tipos de reconhecimento. A Seção \ref{sec:expfacia} fundamenta a expressão facial emocional e mostra as expressões básicas existentes. A Seção \ref{sec:apm} conceitua a área de aprendizagem de máquina. A Seção \ref{sec:pci} apresenta o processo de classificação de imagem. A Seção \ref{sec:tecnic} revisa as técnicas de pré-processamento que são utilizadas para eliminação de ruídos de uma imagem. As Seções \ref{sec:rna} e \ref{sec:rnc} conceituam os aspectos básicos das redes neurais artificiais e das redes neurais de convolução, respectivamente. A Seção \ref{sec:arc} descreve as arquiteturas de redes neurais de convolução utilizadas por este trabalho. A Seção \ref{sec:metavalclass} retrata as principais métricas para avaliar classificadores e para concluir a Seção \ref{sec:considf} faz um resumo acerca deste capítulo.   
 
 \section{Reconhecimento de Emoção}\label{sec:recemo}
 As emoções podem ser definidas como breves e intensas e são disparadas pela avaliação de um evento \citep{scherer2000psychological}. O reconhecimento de emoção tem sido explorado há algumas décadas e as emoções que tem sido frequentemente investigadas são as básicas como a raiva, alegria, tristeza, desgosto, medo e surpresa \citep{ekman1994}. Com objetivo de reconhecer emoção, os pesquisadores têm utilizado comumente as técnicas de reconhecimento de padrões, que por sua vez podem encontrar as características que são importantes para diferenciar as emoções, isto é, a busca pelo padrão relevante de uma entrada de dados, por exemplo uma imagem contendo uma expressão facial, de modo que a técnica consiga diferenciar a felicidade de neutralidade. Além disso, a comunidade tem gerado várias heurísticas para reconhecer emoções, entretanto com emprego somente em ambientes muito controlados. 
@@ -208,13 +208,49 @@ conv3-128                                                     & conv3-128       
 \end{table}
 
 \subsection{Residual Network}
-A Residual Network (ou ResNet) foi desenvolvida por \cite{he2016deep} e foi a técnica vencedora do desafio ILSVRC 2015. A ResNet foi avaliada na base de teste do ImageNet que tinha 1000 classes e alcançou 3.6\% em taxa de erro no top-5, ou seja, quando uma imagem é classificada este tipo de avaliação consiste na verificação das 5 classes com maior probabilidade, e caso esta imagem pertencer ao grupo das 5 classes caracteriza-se uma classificação correta. A ResNet proposta para o concurso tinha 152 camadas caracterizando uma rede muito profunda. 
+A Residual Network (ou ResNet) foi desenvolvida por \cite{he2016deep} e foi a técnica vencedora do desafio ILSVRC 2015. A ResNet foi avaliada na base de teste do ImageNet que tinha 1000 classes e alcançou 3.6\% em taxa de erro no top-5. Este tipo de avaliação consiste na verificação das 5 classes com maiores probabilidades após uma classificação, e caso esta imagem de fato pertencer ao grupo das 5 classes é caracterizado uma classificação correta. A ResNet proposta para o concurso tinha 152 camadas caracterizando uma rede muito profunda. 
 
-O segredo desta técnica consiste na composição dos blocos residuais. Tais blocos trazem novidades     
+O segredo desta técnica consiste na composição dos blocos residuais. A novidade desta arquiteutra é possibilitar que um bloco residual faça o mapeamento de outros blocos distantes através de conexões de salto, isto é, os sinais emitidos pelos neurônios tanto na direção para frente como para trás podem ser propagados diretamente de um bloco para qualquer outro bloco como ilustrado na Figura \ref{fig:bloco-residual}. Este tipo de conexão trouxe impactos positivos na aprendizagem, principalmente atuando na função objetiva, pois quando a mesma está próxima de convergir é aumentado consideravelmente a velocidade do treino comparada as redes tradicionais sem as conexões de salto.   
 
 
 \subsection{\textit{Ensemble}}
 Suponha uma questão complexa perguntada aleatoriamente para milhões de pessoas, então, todas as respostas são agregadas para obter o resultado. Em muitos casos, a resposta agregada é melhor do que a de um especialista. Isto é conhecido como sabedoria popular. Similarmente, se agregar as classificações de uma determinada instância oriunda de um grupo de RNCs e, frequentemente, tem mais acertos do que a classificação de uma única RNC. Um grupo de RNCs ou outros tipos de classificadores e regressores são chamados de \textit{ensemble} \citep{geron2017hands}. Geralmente, quem trabalha com \textit{ensemble} no problema de reconhecimento de emoção tem calculada a média das probabilidades estimadas pelas diversas RNCs para decidir qual a classificação final da expressão facial.
+
+\section{Métricas de Avaliação de Desempenho para Classificadores}\label{sec:metavalclass}
+As principais métricas utilizadas para avaliação de desempenho de classificadores são: acurácia, precisão, revocação e f1-score. Por meio dessas métricas é possível comparar os classificadores determinando os pontos fortes e fracos, invertigar quais são as classes que o modelo tem maiores desempenho, verificar a existência de \textit{overfitting} em uma classe específica, e também, se houve aprendizado em classes com menores amostras. É relevante tais verificações, pois quando a base de treino é desbalanceada pode gerar um modelo que consiste de chutar as classes com maiores amostras a fim de maximizar as taxas de acertos, no entanto, claramente caracterizando um modelo com \textit{overfitting}.
+
+A acurácia é a proporção dos casos corretamente classificados e é calculada a partir da Equação \ref{fun:acurracy}, em que TP é a taxa de verdadeiros positivos, TN é a taxa de verdadeiros negativos, FP é a taxa de falsos positivos e FN é a taxa de falsos negativos. A precisão nos diz a fração de instâncias que são verdadeiras positivas de um grupo que o classificador preveu ser positvo e a fórmula pode ser consultada em \ref{fun:precision}. A revocação mede a fração de instâncias positivas que o classificador esqueceu de classificar corretamente (Equação \ref{fun:recall}). 
+
+Classificadores com uma taxa de revocação alta não tem muitas instâncias positivas classificadas incorretamente. Vale destacar que facilmente é possível construir um classificador que alcança altas taxas de precisão ou revocação mas não ambos. Caso o classificador prevê todas as instâncias da classe positiva, o modelo teria uma taxa perfeita de revocação, entretanto uma baixa precisão. Por isso, criar um classificador que maximiza tanto precisão como revocação é um desafio.
+
+É frequentemente conveniente combinar precisão e revocação em uma única métrica chamada de f1-score, principalmente quando é necessário comparar de uma simples maneira dois classificadores. A f1-score é a média harmônica de precisão e revocação (Equação \ref{fun:f1-score}). Enquanto a média tradicional trata todos os valores igualmente, isto é, sem pesos, a média harmônica favorece os valores mais baixos. Portanto, caso tenha alta revocação e baixa precisão, o resultado de f1-score será mais próximo de precisão, pois esta métrica adiciona pesos nos valores mais baixos, que neste caso é o valor de precisão.  
+
+\begin{equation}
+\label{fun:acurracy}
+acurácia = \frac{TP + TN}{TP + TN + FP + FN} 
+\end{equation}
+
+
+\begin{equation}
+\label{fun:precision}
+precisão = \frac{TP}{TP + FP} 
+\end{equation}
+
+\begin{equation}
+\label{fun:recall}
+revocação = \frac{TP}{TP + FN} 
+\end{equation}
+
+\begin{equation}
+\label{fun:f1-score}
+f1-score = \frac{2}{\frac{1}{precisaão} + \frac{1}{revocação}} = 2 * \frac{precisão * revocação}{precisão + revocação}
+\end{equation}
+
+
+
+%\subsection{Precisão}
+%\subsection{Revocação}
+%\subsection{F1-score}
 
 \section{Resumo}\label{sec:considf}
 Neste capítulo foram apresentados os principais conceitos utilizados por esta proposta. Foi visto que uma RNC, que é uma técnica de aprendizagem de máquina, foi projetada para a classificação de imagem, justificando a sua escolha para a classificação de emoções em expressão facial. Esta técnica é muito poderosa e tem sido inspirada no cérebro dos mamíferos. A expressão facial tem se destacado como uma forma eficaz de coleta de dados para o reconhecimento de emoção, principalmente, por ser ubíqua, não intrusiva e pela popularidade de dispositivos que contém câmeras fotográficas. Entretanto, somente as emoções básicas são possíveis de reconhecer por meio da expressão facial. Isso significa que reconhecer tédio, frustração e confusão se torna bastante difícil por esse meio. Além disso, técnicas de pré-processamento, tais como histograma de equalização e detecção com recorte da face são úteis durante o processo de classificação de imagens, justamente por diminuir a carga de aprendizado da rede. Por fim, foram conceituadas algumas das principais arquiteturas de RNCs em que cada uma possui sua característica em particular que precisam ser experimentadas em diferentes cenários.  
