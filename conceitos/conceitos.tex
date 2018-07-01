@@ -212,6 +212,13 @@ A Residual Network (ou ResNet) foi desenvolvida por \cite{he2016deep} e foi a t�
 
 O segredo desta técnica consiste na composição dos blocos residuais. A novidade desta arquiteutra é possibilitar que um bloco residual faça o mapeamento de outros blocos distantes através de conexões de salto, isto é, os sinais emitidos pelos neurônios tanto na direção para frente como para trás podem ser propagados diretamente de um bloco para qualquer outro bloco como ilustrado na Figura \ref{fig:bloco-residual}. Este tipo de conexão trouxe impactos positivos na aprendizagem, principalmente atuando na função objetiva, pois quando a mesma está próxima de convergir é aumentado consideravelmente a velocidade do treino comparada as redes tradicionais sem as conexões de salto.   
 
+\begin{figure}
+\centering
+\includegraphics[scale=0.36]{figuras/resnet-block-residual.png}
+\caption{Bloco residual}
+\label{fig:bloco-residual}
+\end{figure}
+
 
 \subsection{\textit{Ensemble}}
 Suponha uma questão complexa perguntada aleatoriamente para milhões de pessoas, então, todas as respostas são agregadas para obter o resultado. Em muitos casos, a resposta agregada é melhor do que a de um especialista. Isto é conhecido como sabedoria popular. Similarmente, se agregar as classificações de uma determinada instância oriunda de um grupo de RNCs e, frequentemente, tem mais acertos do que a classificação de uma única RNC. Um grupo de RNCs ou outros tipos de classificadores e regressores são chamados de \textit{ensemble} \citep{geron2017hands}. Geralmente, quem trabalha com \textit{ensemble} no problema de reconhecimento de emoção tem calculada a média das probabilidades estimadas pelas diversas RNCs para decidir qual a classificação final da expressão facial.

@@ -1,5 +1,5 @@
 \chapter{Resultados Parciais}\label{sec:resultados}
-Neste capítulo os resultados parciais são apresentados divididos nas seguintes seções. A Seção \ref{sec:prova} destaca pontos relevantes de um artigo publicado no Simpósio Brasileiro de Informática na Educação (SBIE) responsável em nortear esta proposta entitulado como Framework para coleta e inferência de estados emocionais de estudantes. A Seção \ref{sec:reconhecedor} apresenta um estudo experimental comparativo sobre as arquiteturas de redes neurais de convolução relacionado ao domínio do problema e enquanto a Seção \ref{sec:considera} o resumo deste capítulo.   
+Neste capítulo os resultados parciais são apresentados divididos nas seguintes seções. A Seção \ref{sec:prova} destaca pontos relevantes de um artigo publicado no Simpósio Brasileiro de Informática na Educação (SBIE) responsável em nortear esta proposta entitulado como Framework para coleta e inferência de estados emocionais de estudantes. A Seção \ref{sec:avalexp} apresenta um estudo experimental comparativo sobre as arquiteturas de redes neurais de convolução relacionado ao domínio do problema e enquanto a Seção \ref{sec:considera} o resumo deste capítulo.   
 
 
 %\section{\textit{Framework} para coleta e inferência de estados emocionais de estudantes}\label{sec:prova}
@@ -264,15 +264,15 @@ foi devido a limitação de hardware que este projeto dispõe para execução de
 \subsection{Treinamento}
 O treinamento consistiu no uso dos materiais descritos na Seção \ref{sec:material} e das bases de treino e teste descritas nas Tabelas \ref{table:basesdivisao} e \ref{table:distclasse}. A estratégia adotada durante a fase de treinamento foi salvar vários modelos enquanto a função de perda convergia para serem utilizadas em comparações. Para todos os experimentos o tamanho de batch foi de 64 imagens e a taxa de aprendizado foi de 0.001 para Alexnet e Inception-v3, no entanto para ResNet-34 foi de 0.1, obviamente isso resultou que a ResNet-34 treinasse mais rápida que as demais, fato que pode ser constatado pela Figura \ref{fig:loss-val}. Esses são os parâmetros padrões de cada arquitetura, por isso não houve qualquer alteração. 
 
-As Figuras \ref{fig:acc-train} e \ref{fig:acc-val} mostram respectivamente o gráfico de acurácia na base de treino e teste durante o treinamento. Para cada arquitetura há uma linha na vertical demarcando o passo em que foi gerado o modelo que obteve as melhores taxas de acurácia, precisão e revocação, e são esses os modelos selecionados para a discussão acerca deste capítulo. Por exemplo, o melhor modelo da arquitetura Alexnet foi gerado no passo 17800, a Residual Net no passo 11250 e a Inception V3 em 34000. As Figuras \ref{fig:loss-train} e \ref{fig:loss-val} apresenta o gráfico da função de perda na base de treino e teste respectivamente ao longo das épocas.
+%Para cada arquitetura há uma linha na vertical demarcando o passo em que foi gerado o modelo que obteve as melhores taxas de acurácia, precisão e revocação, e são esses os modelos selecionados para a discussão acerca deste capítulo. Por exemplo, o melhor modelo da arquitetura Alexnet foi gerado no passo 17800, a Residual Net no passo 11250 e a Inception V3 em 34000. A Figura \ref{fig:acc-val} mostra o gráfico de acurácia na base de teste durante o treinamento. A Figura \ref{fig:loss-val} apresenta o gráfico da função de perda na base de teste ao longo das épocas.
 
 
-\begin{figure}
-\centering
-\includegraphics[scale=0.5]{figuras/accuracy.png}
-\caption{Gráfico de Acurácia na Base de Treino. As linhas vertificais indicam o melhor modelo. }
-\label{fig:acc-train}
-\end{figure}
+%\begin{figure}
+%\centering
+%\includegraphics[scale=0.5]{figuras/accuracy.png}
+%\caption{Gráfico de Acurácia na Base de Treino. As linhas vertificais indicam o melhor modelo. }
+%\label{fig:acc-train}
+%\end{figure}
 
 \begin{figure}
 \centering
@@ -281,12 +281,12 @@ As Figuras \ref{fig:acc-train} e \ref{fig:acc-val} mostram respectivamente o gr�
 \label{fig:acc-val}
 \end{figure}
 
-\begin{figure}
-\centering
-\includegraphics[scale=0.5]{figuras/loss.png}
-\caption{Gráfico da Função de Perda na Base de Treino. As linhas vertificais indicam o melhor modelo.}
-\label{fig:loss-train}
-\end{figure}
+%\begin{figure}
+%\centering
+%\includegraphics[scale=0.5]{figuras/loss.png}
+%\caption{Gráfico da Função de Perda na Base de Treino. As linhas vertificais indicam o melhor modelo.}
+%\label{fig:loss-train}
+%\end{figure}
 
 \begin{figure}
 \centering
@@ -346,80 +346,6 @@ As Figuras \ref{fig:acc-train} e \ref{fig:acc-val} mostram respectivamente o gr�
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-% Please add the following required packages to your document preamble:
-% \usepackage{multirow}
-\begin{table}[]
-\centering
-\caption{Resultados experimentais das redes neurais de convolução avaliando a base de validação CIFE-Test}
-\label{table:cife-test}
-\begin{tabular}{llcccc}
-\hline
-\textbf{Arquitetura}                   & \textbf{Emoção}       & \textbf{Precisão} & \textbf{Revocação} & \textbf{F1-score} & \textbf{Acurácia}               \\ \hline
-\multirow{8}{*}{Alexnet}         & Raiva                 & 0.58              & 0.7                & 0.63              & \multirow{8}{*}{0.626}          \\
-                                       & Desgosto              & 0.35              & 0.38               & 0.36              &                                 \\
-                                       & Medo                  & 0.46              & 0.35               & 0.4               &                                 \\
-                                       & Felicidade            & 0.72              & 0.8                & 0.76              &                                 \\
-                                       & Tristeza              & 0.72              & 0.61               & 0.66              &                                 \\
-                                       & Surpresa              & 0.73              & 0.62               & 0.67              &                                 \\
-                                       & Neutralidade          & 0.5               & 0.51               & 0.5               &                                 \\
-                                       & Média/Total           & 0.63              & 0.63               & 0.62              &                                 \\ \hline
-\multirow{8}{*}{Inception-V3}     & Raiva                 & 0.62              & 0.62               & 0.62              & \multirow{8}{*}{0.613}          \\
-                                       & Desgosto              & 0.26              & 0.3                & 0.28              &                                 \\
-                                       & Medo                  & 0.47              & 0.46               & 0.46              &                                 \\
-                                       & Felicidade            & 0.86              & 0.79               & 0.83              &                                 \\
-                                       & Tristeza              & 0.56              & 0.54               & 0.55              &                                 \\
-                                       & Surpresa              & 0.7               & 0.61               & 0.65              &                                 \\
-                                       & Neutralidade          & 0.45              & 0.57               & 0.5               &                                 \\
-                                       & Média/Total           & 0.63              & 0.61               & 0.62              &                                 \\ \hline
-\multirow{8}{*}{\textbf{ResNet-34}} & \textbf{Raiva}        & \textbf{0.78}     & \textbf{0.6}       & \textbf{0.68}     & \multirow{8}{*}{\textbf{0.687}} \\
-                                       & \textbf{Desgosto}     & \textbf{0.65}     & \textbf{0.34}      & \textbf{0.45}     &                                 \\
-                                       & \textbf{Medo}         & \textbf{0.4}      & \textbf{0.42}      & \textbf{0.41}     &                                 \\
-                                       & \textbf{Felicidade}   & \textbf{0.84}     & \textbf{0.87}      & \textbf{0.85}     &                                 \\
-                                       & \textbf{Tristeza}     & \textbf{0.66}     & \textbf{0.71}      & \textbf{0.69}     &                                 \\
-                                       & \textbf{Surpresa}     & \textbf{0.62}     & \textbf{0.81}      & \textbf{0.7}      &                                 \\
-                                       & \textbf{Neutralidade} & \textbf{0.61}     & \textbf{0.6}       & \textbf{0.6}      &                                 \\
-                                       & \textbf{Média/Total}  & \textbf{0.69}     & \textbf{0.69}      & \textbf{0.68}     &                                 \\ \hline
-\end{tabular}
-\end{table}
-
-
-% Please add the following required packages to your document preamble:
-% \usepackage{multirow}
-\begin{table}[]
-\centering
-\caption{Resultados experimentais das redes neurais de convolução avaliando a base de validação CIFE-Train}
-\label{table:cife-train}
-\begin{tabular}{llcccc}
-\hline
-\textbf{Arquitetura}                   & \textbf{Emoção}       & \multicolumn{1}{l}{\textbf{Precisão}} & \multicolumn{1}{l}{\textbf{Revocação}} & \multicolumn{1}{l}{\textbf{F1-score}} & \multicolumn{1}{l}{\textbf{Acurácia}} \\ \hline
-\multirow{8}{*}{Alexnet}         & Raiva                 & 0.55                                  & 0.6                                    & 0.58                                  & \multirow{8}{*}{0.624}                \\
-                                       & Desgosto              & 0.3                                   & 0.31                                   & 0.3                                   &                                       \\
-                                       & Medo                  & 0.5                                   & 0.49                                   & 0.5                                   &                                       \\
-                                       & Felicidade            & 0.73                                  & 0.85                                   & 0.79                                  &                                       \\
-                                       & Tristeza              & 0.68                                  & 0.6                                    & 0.64                                  &                                       \\
-                                       & Surpresa              & 0.71                                  & 0.53                                   & 0.61                                  &                                       \\
-                                       & Neutralidade          & 0.54                                  & 0.53                                   & 0.53                                  &                                       \\
-                                       & Média/Total           & 0.62                                  & 0.62                                   & 0.62                                  &                                       \\ \hline
-\multirow{8}{*}{Inception-V3}     & Raiva                 & 0.58                                  & 0.5                                    & 0.53                                  & \multirow{8}{*}{0.572}                \\
-                                       & Desgosto              & 0.21                                  & 0.26                                   & 0.23                                  &                                       \\
-                                       & Medo                  & 0.4                                   & 0.47                                   & 0.43                                  &                                       \\
-                                       & Felicidade            & 0.83                                  & 0.79                                   & 0.81                                  &                                       \\
-                                       & Tristeza              & 0.49                                  & 0.49                                   & 0.49                                  &                                       \\
-                                       & Surpresa              & 0.69                                  & 0.54                                   & 0.61                                  &                                       \\
-                                       & Neutralidade          & 0.44                                  & 0.53                                   & 0.48                                  &                                       \\
-                                       & Média/Total           & 0.59                                  & 0.57                                   & 0.58                                  &                                       \\ \hline
-\multirow{8}{*}{\textbf{ResNet-34}} & \textbf{Raiva}        & \textbf{0.71}                         & \textbf{0.61}                          & \textbf{0.66}                         & \multirow{8}{*}{\textbf{0.673}}       \\
-                                       & \textbf{Desgosto}     & \textbf{0.44}                         & \textbf{0.22}                          & \textbf{0.3}                          &                                       \\
-                                       & \textbf{Medo}         & \textbf{0.46}                         & \textbf{0.52}                          & \textbf{0.49}                         &                                       \\
-                                       & \textbf{Felicidade}   & \textbf{0.82}                         & \textbf{0.83}                          & \textbf{0.83}                         &                                       \\
-                                       & \textbf{Tristeza}     & \textbf{0.67}                         & \textbf{0.74}                          & \textbf{0.7}                          &                                       \\
-                                       & \textbf{Surpresa}     & \textbf{0.6}                          & \textbf{0.75}                          & \textbf{0.67}                         &                                       \\
-                                       & \textbf{Neutralidade} & \textbf{0.61}                         & \textbf{0.56}                          & \textbf{0.58}                         &                                       \\
-                                       & \textbf{Média/Total}  & \textbf{0.67}                         & \textbf{0.67}                          & \textbf{0.67}                         &                                       \\ \hline
-\end{tabular}
-\end{table}
 
 
 
@@ -496,154 +422,6 @@ As Figuras \ref{fig:acc-train} e \ref{fig:acc-val} mostram respectivamente o gr�
 \end{tabular}
 \end{table}
 
-
-% Please add the following required packages to your document preamble:
-% \usepackage{multirow}
-\begin{table}[]
-\centering
-\caption{Resultados experimentais das redes neurais de convolução avaliando a base de validação JAFFE}
-\label{table:jaffe}
-\begin{tabular}{llcccc}
-\hline
-\textbf{Arquitetura}                   & \textbf{Emoção}       & \multicolumn{1}{l}{\textbf{Precisão}} & \multicolumn{1}{l}{\textbf{Revocação}} & \multicolumn{1}{l}{\textbf{F1-score}} & \multicolumn{1}{l}{\textbf{Acurácia}} \\ \hline
-\multirow{8}{*}{Alexnet}         & Raiva                 & 0.62                                  & 0.62                                   & 0.62                                  & \multirow{8}{*}{0.618}                \\
-                                       & Desgosto              & 0.57                                  & 0.36                                   & 0.44                                  &                                       \\
-                                       & Medo                  & 0                                     & 0                                      & 0                                     &                                       \\
-                                       & Felicidade            & 0.93                                  & 0.93                                   & 0.93                                  &                                       \\
-                                       & Tristeza              & 0.5                                   & 0.4                                    & 0.44                                  &                                       \\
-                                       & Surpresa              & 0.67                                  & 0.8                                    & 0.73                                  &                                       \\
-                                       & Neutralidade          & 0                                     & 0                                      & 0                                     &                                       \\
-                                       & Média/Total           & 0.65                                  & 0.62                                   & 0.63                                  &                                       \\ \hline
-\multirow{8}{*}{Inception-V3}     & Raiva                 & 0.45                                  & 0.62                                   & 0.53                                  & \multirow{8}{*}{0.636}                \\
-                                       & Desgosto              & 0.6                                   & 0.27                                   & 0.37                                  &                                       \\
-                                       & Medo                  & 0.5                                   & 0.5                                    & 0.5                                   &                                       \\
-                                       & Felicidade            & 0.93                                  & 0.93                                   & 0.93                                  &                                       \\
-                                       & Tristeza              & 0.44                                  & 0.4                                    & 0.42                                  &                                       \\
-                                       & Surpresa              & 0.82                                  & 0.9                                    & 0.86                                  &                                       \\
-                                       & Neutralidade          & 0                                     & 0                                      & 0                                     &                                       \\
-                                       & Média/Total           & 0.67                                  & 0.64                                   & 0.64                                  &                                       \\ \hline
-\multirow{8}{*}{\textbf{ResNet-34}} & \textbf{Raiva}        & \textbf{0.8}                          & \textbf{0.5}                           & \textbf{0.62}                         & \multirow{8}{*}{\textbf{0.654}}       \\
-                                       & \textbf{Desgosto}     & \textbf{0.71}                         & \textbf{0.45}                          & \textbf{0.56}                         &                                       \\
-                                       & \textbf{Medo}         & \textbf{1}                            & \textbf{0.5}                           & \textbf{0.67}                         &                                       \\
-                                       & \textbf{Felicidade}   & \textbf{1}                            & \textbf{0.64}                          & \textbf{0.78}                         &                                       \\
-                                       & \textbf{Tristeza}     & \textbf{0.58}                         & \textbf{0.7}                           & \textbf{0.64}                         &                                       \\
-                                       & \textbf{Surpresa}     & \textbf{0.53}                         & \textbf{1}                             & \textbf{0.69}                         &                                       \\
-                                       & \textbf{Neutralidade} & \textbf{0}                            & \textbf{0}                             & \textbf{0}                            &                                       \\
-                                       & \textbf{Média/Total}  & \textbf{0.75}                         & \textbf{0.65}                          & \textbf{0.67}                         &                                       \\ \hline
-\end{tabular}
-\end{table}
-
-
-
-% Please add the following required packages to your document preamble:
-% \usepackage{multirow}
-\begin{table}[]
-\centering
-\caption{Resultados experimentais das redes neurais de convolução avaliando a base de validação KDEF}
-\label{table:kdef}
-\begin{tabular}{llcccc}
-\hline
-\textbf{Arquitetura}                   & \textbf{Emoção}       & \multicolumn{1}{l}{\textbf{Precisão}} & \multicolumn{1}{l}{\textbf{Revocação}} & \multicolumn{1}{l}{\textbf{F1-score}} & \multicolumn{1}{l}{\textbf{Acurácia}} \\ \hline
-\multirow{8}{*}{Alexnet}         & Raiva                 & 0.65                                  & 0.59                                   & 0.62                                  & \multirow{8}{*}{0.624}                \\
-                                       & Desgosto              & 0.6                                   & 0.79                                   & 0.68                                  &                                       \\
-                                       & Medo                  & 0.48                                  & 0.43                                   & 0.45                                  &                                       \\
-                                       & Felicidade            & 0.8                                   & 0.93                                   & 0.86                                  &                                       \\
-                                       & Tristeza              & 0.52                                  & 0.4                                    & 0.45                                  &                                       \\
-                                       & Surpresa              & 0.81                                  & 0.61                                   & 0.7                                   &                                       \\
-                                       & Neutralidade          & 0.52                                  & 0.62                                   & 0.57                                  &                                       \\
-                                       & Média/Total           & 0.63                                  & 0.62                                   & 0.62                                  &                                       \\ \hline
-\multirow{8}{*}{Inception-V3}     & Raiva                 & 0.51                                  & 0.53                                   & 0.52                                  & \multirow{8}{*}{0.587}                \\
-                                       & Desgosto              & 0.62                                  & 0.45                                   & 0.52                                  &                                       \\
-                                       & Medo                  & 0.54                                  & 0.36                                   & 0.43                                  &                                       \\
-                                       & Felicidade            & 0.93                                  & 0.87                                   & 0.9                                   &                                       \\
-                                       & Tristeza              & 0.34                                  & 0.5                                    & 0.41                                  &                                       \\
-                                       & Surpresa              & 0.76                                  & 0.8                                    & 0.78                                  &                                       \\
-                                       & Neutralidade          & 0.54                                  & 0.6                                    & 0.57                                  &                                       \\
-                                       & Média/Total           & 0.61                                  & 0.59                                   & 0.59                                  &                                       \\ \hline
-\multirow{8}{*}{\textbf{ResNet-34}} & \textbf{Raiva}        & \textbf{0.7}                          & \textbf{0.7}                           & \textbf{0.7}                          & \multirow{8}{*}{\textbf{0.751}}       \\
-                                       & \textbf{Desgosto}     & \textbf{0.65}                         & \textbf{0.88}                          & \textbf{0.75}                         &                                       \\
-                                       & \textbf{Medo}         & \textbf{0.73}                         & \textbf{0.44}                          & \textbf{0.55}                         &                                       \\
-                                       & \textbf{Felicidade}   & \textbf{0.94}                         & \textbf{0.99}                          & \textbf{0.96}                         &                                       \\
-                                       & \textbf{Tristeza}     & \textbf{0.69}                         & \textbf{0.7}                           & \textbf{0.7}                          &                                       \\
-                                       & \textbf{Surpresa}     & \textbf{0.73}                         & \textbf{0.9}                           & \textbf{0.8}                          &                                       \\
-                                       & \textbf{Neutralidade} & \textbf{0.86}                         & \textbf{0.66}                          & \textbf{0.75}                         &                                       \\
-                                       & \textbf{Média/Total}  & \textbf{0.76}                         & \textbf{0.75}                          & \textbf{0.74}                         &                                       \\ \hline
-\end{tabular}
-\end{table}
-
-
-% Please add the following required packages to your document preamble:
-% \usepackage{multirow}
-\begin{table}[]
-\centering
-\caption{Resultados experimentais das redes neurais de convolução avaliando a base de validação NovaEmotions}
-\label{table:novaemotions}
-\begin{tabular}{llcccc}
-\hline
-\textbf{Arquitetura}                   & \textbf{Emoção}       & \multicolumn{1}{l}{\textbf{Precisão}} & \multicolumn{1}{l}{\textbf{Revocação}} & \multicolumn{1}{l}{\textbf{F1-score}} & \multicolumn{1}{l}{\textbf{Acurácia}}   \\ \hline
-\multirow{8}{*}{Alexnet}         & Raiva                 & 0.68                         & 0.33                          & 0.44                         & \multirow{8}{*}{0.857}         \\
-                                       & Desgosto              & 0.69                         & 0.63                          & 0.66                         &                                \\
-                                       & Medo                  & 0.57                         & 0.25                          & 0.34                         &                                \\
-                                       & Felicidade            & 0.89                         & 0.94                          & 0.92                         &                                \\
-                                       & Tristeza              & 0.86                         & 0.73                          & 0.79                         &                                \\
-                                       & Surpresa              & 0.9                          & 0.87                          & 0.89                         &                                \\
-                                       & Neutralidade          & 0.76                         & 0.77                          & 0.76                         &                                \\
-                                       & Média/Total           & 0.85                         & 0.86                          & 0.85                         &                                \\ \hline
-\multirow{8}{*}{Inception-V3}     & Raiva                 & 0.3                          & 0.22                          & 0.25                         & \multirow{8}{*}{0.853}         \\
-                                       & Desgosto              & 0.68                         & 0.6                           & 0.64                         &                                \\
-                                       & Medo                  & 0.44                         & 0.15                          & 0.23                         &                                \\
-                                       & Felicidade            & 0.9                          & 0.94                          & 0.92                         &                                \\
-                                       & Tristeza              & 0.89                         & 0.67                          & 0.77                         &                                \\
-                                       & Surpresa              & 0.92                         & 0.88                          & 0.9                          &                                \\
-                                       & Neutralidade          & 0.71                         & 0.77                          & 0.74                         &                                \\
-                                       & Média/Total           & 0.85                         & 0.85                          & 0.85                         &                                \\ \hline
-\multirow{8}{*}{\textbf{ResNet-34}} & \textbf{Raiva}        & \textbf{0.54}                & \textbf{0.33}                 & \textbf{0.41}                & \multirow{8}{*}{\textbf{0.87}} \\
-                                       & \textbf{Desgosto}     & \textbf{0.85}                & \textbf{0.65}                 & \textbf{0.74}                &                                \\
-                                       & \textbf{Medo}         & \textbf{0.73}                & \textbf{0.15}                 & \textbf{0.25}                &                                \\
-                                       & \textbf{Felicidade}   & \textbf{0.93}                & \textbf{0.93}                 & \textbf{0.93}                &                                \\
-                                       & \textbf{Tristeza}     & \textbf{0.71}                & \textbf{0.88}                 & \textbf{0.78}                &                                \\
-                                       & \textbf{Surpresa}     & \textbf{0.93}                & \textbf{0.89}                 & \textbf{0.91}                &                                \\
-                                       & \textbf{Neutralidade} & \textbf{0.75}                & \textbf{0.79}                 & \textbf{0.77}                &                                \\
-                                       & \textbf{Média/Total}  & \textbf{0.87}                & \textbf{0.87}                 & \textbf{0.87}                &                                \\ \hline
-\end{tabular}
-\end{table}
-
-
-% Please add the following required packages to your document preamble:
-% \usepackage{multirow}
-\begin{table}[]
-\centering
-\caption{Resultados experimentais das redes neurais de convolução avaliando a base de validação RAFD}
-\label{table:rafd}
-\begin{tabular}{llcccc}
-\hline
-\textbf{Arquitetura}                   & \textbf{Emoção}       & \multicolumn{1}{l}{\textbf{Precisão}} & \multicolumn{1}{l}{\textbf{Revocação}} & \multicolumn{1}{l}{\textbf{F1-score}} & \multicolumn{1}{l}{\textbf{Acurácia}} \\ \hline
-\multirow{8}{*}{Alexnet}         & Raiva                 & 0.66                                  & 0.77                                   & 0.71                                  & \multirow{8}{*}{0.641}                \\
-                                       & Desgosto              & 0.58                                  & 0.75                                   & 0.66                                  &                                       \\
-                                       & Medo                  & 0.74                                  & 0.58                                   & 0.65                                  &                                       \\
-                                       & Felicidade            & 0.72                                  & 0.81                                   & 0.76                                  &                                       \\
-                                       & Tristeza              & 0.67                                  & 0.36                                   & 0.47                                  &                                       \\
-                                       & Surpresa              & 0.76                                  & 0.73                                   & 0.74                                  &                                       \\
-                                       & Neutralidade          & 0.45                                  & 0.38                                   & 0.41                                  &                                       \\
-                                       & Média/Total           & 0.65                                  & 0.64                                   & 0.63                                  &                                       \\ \hline
-\multirow{8}{*}{Inception-V3}     & Raiva                 & 0.65                                  & 0.72                                   & 0.68                                  & \multirow{8}{*}{0.674}                \\
-                                       & Desgosto              & 0.71                                  & 0.65                                   & 0.68                                  &                                       \\
-                                       & Medo                  & 0.82                                  & 0.55                                   & 0.66                                  &                                       \\
-                                       & Felicidade            & 0.89                                  & 0.87                                   & 0.88                                  &                                       \\
-                                       & Tristeza              & 0.46                                  & 0.68                                   & 0.55                                  &                                       \\
-                                       & Surpresa              & 0.82                                  & 0.81                                   & 0.81                                  &                                       \\
-                                       & Neutralidade          & 0.49                                  & 0.48                                   & 0.49                                  &                                       \\
-                                       & Média/Total           & 0.69                                  & 0.67                                   & 0.68                                  &                                       \\ \hline
-\multirow{8}{*}{\textbf{ResNet-34}} & \textbf{Raiva}        & \textbf{0.67}                         & \textbf{0.92}                          & \textbf{0.77}                         & \multirow{8}{*}{\textbf{0.775}}       \\
-                                       & \textbf{Desgosto}     & \textbf{0.8}                          & \textbf{0.81}                          & \textbf{0.81}                         &                                       \\
-                                       & \textbf{Medo}         & \textbf{0.81}                         & \textbf{0.65}                          & \textbf{0.72}                         &                                       \\
-                                       & \textbf{Felicidade}   & \textbf{0.87}                         & \textbf{0.94}                          & \textbf{0.9}                          &                                       \\
-                                       & \textbf{Tristeza}     & \textbf{0.74}                         & \textbf{0.7}                           & \textbf{0.72}                         &                                       \\
-                                       & \textbf{Surpresa}     & \textbf{0.76}                         & \textbf{0.94}                          & \textbf{0.84}                         &                                       \\
-                                       & \textbf{Neutralidade} & \textbf{0.8}                          & \textbf{0.44}                          & \textbf{0.57}                         &                                       \\
-                                       & \textbf{Média/Total}  & \textbf{0.78}                         & \textbf{0.78}                          & \textbf{0.77}                         &                                       \\ \hline
-\end{tabular}
-\end{table}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -856,10 +634,35 @@ As Figuras \ref{fig:acc-train} e \ref{fig:acc-val} mostram respectivamente o gr�
 \end{tiny}
 \end{comment}
 
-A Tabela \ref{table:resultsexp} apresenta os resultados das redes neurais de convolução avaliando a base de validação geral. No contexto geral, podemos verificar que a ResNet-34 gerou o modelo que obteve os melhores resultados em todas as métricas: acurácia, precisão, revocação e f1-score, sendo destacada em negrito. A ResNet-34 alcançou 75.7\% em acurácia, enquanto a Alexnet 71.2\% e Inception-V3 70.1\%. Percebemos uma diferença de 4.5\% entre a ResNet-34 e Alexnet caracterizando uma diferença considerável. Estes resultados supõe que a ResNet é uma rede que se adequa ao problema de reconhecimento de emoção via expressão facial.
+Durante o treinamento vários modelos foram salvos. Adotamos o melhor modelo gerado por cada arquitetura para esta seção, logo vamos discutir a respeito de três modelos eleitos a partir de uma avaliação na base de validação. Os resultados referentes a todos os modelos podem ser consultados no Anexo \ref{anex:results-anexos}. Podemos perceber que o melhor modelo da arquitetura Alexnet foi gerado no passo 17800, enquanto que a Residual foi no passo 11250 e por fim a Inception V3 em 34000.   
+
+As Figuras \ref{fig:acc-val} e \ref{fig:loss-val} são figuras a respeito da acurácia e da função de perda durante o treinamento. Ambas possuem linhas verticais demarcando os modelos selecionados para a discussão ao longo da seção. Analisando a primeira figura, a taxa de acurácia na base de teste, percebemos que a ResNet-34 no início do treino tem um crescimento semelhante a uma função exponencial e, a partir da interação 5k estabiliza alcançado 76\%. A Alexnet também tem uma curva bastante crescente no início, entretanto foi inferior a ResNet-34 alcançando 70.5\%, uma diferença considerável. A Inception V3 teve um comportamento diferente, sendo que no início do treino a função ficou estática, e posteriormente, foi crescendo, no entanto assemelhando-se ao crescimento de uma função linear. A Inception V3 ficou abaixo da Alexnet, alcançando 70\% de acurácia na base de teste. 
+
+A função de perda definida foi a entropia cruzada. A entropia cruzada é apropriada para problemas de classificação. Analisando a Figura \ref{fig:loss-val} podemos interpretar como quanto menor for o valor melhor está sendo o desempenho do classificador, pois esta função é um indicador do erro propagado na rede e o objetivo do gradiente descendente é minimizar estes valores. Logo, quem obteve o menor valor de função de perda foi a Resnet, e consequentemente, a que alcançou melhor desempenho em acurácia. 
+
+Verificando os pontos da função de perda da Inception V3, é visto que nas primeiras épocas não há uma queda acentuada coincidindo com a demora na inclinação da medida de acurácia, obviamente também relacionada a Inception V3. De acordo com \cite{geron2017hands}, os melhores modelos são os gerados a partir do momento em que a função de perda na base de teste encontra seu valor mínimo até o momento que começa a crescer. Considerando esta teoria o momento certo de interromper o treinamento é quando a função de perda começa a crescer após encontrar o mínimo, isto é conhecido como parada antecipada, pois os modelos gerados adiantes possuem super vícios na base de treino.
+
+A Tabela \ref{table:resultsexp} apresenta os resultados das redes neurais de convolução avaliando a base de validação geral. Vale ressaltar que a base de validação geral seria uma medição do desempenho dos modelos em cenário real, pois a base de validação não fez parte do treinamento, isto é, são instâncias desconhecidas. Analisamos que a ResNet-34 gerou o modelo que obteve os melhores resultados em todas as métricas: acurácia, precisão, revocação e f1-score, sendo destacada em negrito. A ResNet-34 alcançou 75.7\% em acurácia, enquanto a Alexnet 71.2\% e Inception-V3 70.1\%. Percebemos uma diferença de 4.5\% entre a ResNet-34 e Alexnet caracterizando uma diferença considerável. 
+
+A emoção que a ResNet-34 teve melhor desempenho para reconhecer foi a felicidade alcançando um f1-score em 90\%. Provavelmente pela característica da felicidade ser atribuída a um sorriso. A segunda emoção com melhor resultado foi a surpresa com f1-score em 84\%. Esta emoção tem como marca a boca aberta, outra característica que a rede aprendeu. Este resultado não surpreende, pois essas emoções são duas das três emoções que mais possuem amostragem (consultar Tabela \ref{table:distclasse}). O número de amostra está associado ao aprendizado, teoricamente o cenário ideal é ter a base balanceada ou a quantidade de amostras proporcionais ao mundo real.
+
+Os piores desempenho foram nas emoções medo e raiva. Coincidentemente duas das três emoções que menos tem amostragem. Este resultado não necessariamente foi devido a menor amostragem dessas classes, pois realmente são expressões faciais complicadas. A expressão facial medo não há um padrão bem definido e envolve vários músculos do rosto. Vale ressaltar que a construção de um sistema que possui requisitos de alta precisão nessas duas emoções seja necessário outras fontes de dados além da expressão facial. 
+
+A neutralidade foi uma das três emoções que mais teve amostragem. Entretanto, alcançou somente 68\% de f1-score, portanto um baixo valor. Este resultado pode ser explicado pelo fato da rede neural ter aprendido que a neutralidade consiste em nenhum movimento muscular da face. Caso haja um leve movimento facial a rede tende a classificar em uma das emoções que não seja neutralidade.
+
+Nas três arquiteturas percebemos que as emoções felicidade e surpresa tem resultados um pouco próximo. Lembrando que são duas das três emoções que mais tem amostragem e possuem padrões menos variável como características próprias para diferenciá-las. Entretanto, as outras emoções, com exceção da emoção medo, que teoricamente são mais difíceis de aprender, não apenas por ter menos amostragem, mas também por ter padrões menos definidos e variáveis, houve bastante superioridade no desempenho da ResNet-34. A emoção medo foi praticamente empate com resultado ruim em todas as arquiteturas. 
 
 
-As Tabelas \ref{table:cife-test}, \ref{table:cife-train}, \ref{table:ck}, \ref{table:fer}, \ref{table:jaffe}, \ref{table:kdef}, \ref{table:novaemotions} e \ref{table:rafd} apresentam os resultados das redes neurais de conovolução avaliando as bases de validação: \textit{CIFE-Train}, \textit{CIFE-Test}, \textit{CK}, \textit{FER}, \textit{JAFFE}, \textit{KDEF}, \textit{NovaEmotions} e \textit{RAFD}, respectivamente, 
+%Estes resultados supõe que a ResNet é uma rede que se adequa ao problema de reconhecimento de emoção via expressão facial.
+
+
+%As Tabelas \ref{table:cife-test}, \ref{table:cife-train}, \ref{table:ck}, \ref{table:fer}, \ref{table:jaffe}, \ref{table:kdef}, \ref{table:novaemotions} e \ref{table:rafd} apresentam os resultados das redes neurais de conovolução avaliando as bases de validação: \textit{CIFE-Train}, \textit{CIFE-Test}, \textit{CK}, \textit{FER}, \textit{JAFFE}, \textit{KDEF}, \textit{NovaEmotions} e \textit{RAFD}, respectivamente, 
+
+As Tabelas \ref{table:ck} e \ref{table:fer} apresentam os resultados das redes neurais de convolução avaliando as bases de validação: \textit{CK} e \textit{FER}. Foram escolhidas essas duas bases por serem as mais utilizadas na literatura e por uma possuir característica de imagens capturadas no laboratório (CK) e a outra na natureza (FER). No Anexo \ref{anex:results-anexos-val} pode ser consultado os resultados para as bases: \textit{CIFE-Train}, \textit{CIFE-Test}, \textit{JAFFE}, \textit{KDEF}, \textit{NovaEmotions} e \textit{RAFD}. 
+
+A base CK teve ótimos resultados nas três arquiteturas. No entanto, a ResNet-34 foi a melhor chegando a 96.9\% de acurácia. Nesta base não há amostragem da emoção neutralidade. O que acarretou este resultado expressivo nas três arquiteturas foi o fato desta base ser laboratorial. Neste caso, configura um cenário perfeito onde as imagens não tem ruídos, distância próxima e fixa da câmera, iluminação ideal, pouca angulação da face, os atores emitindo as emoções com intensidade e rotulação correta da base. 
+
+Nos trabalhos de \cite{art1}, \cite{art11} e \cite{art7} obtiveram  99.1\%, 98.7\% e 97.3\%, respectivamente, contudo vale destacar que estes trabalhos treinaram e testaram somente com a base CK, que tende a ter melhor desempenho de fato, pois se especializaram em reconhecer imagens dessa base e laboratoriais. Outro ponto relevante é que não fica claro se esses resultados são referentes a base de teste ou validação. Nosso trabalho alcançou 96.9\%, ou seja, próximo dos resultados acima, com a combinação de várias bases inclusive de características de imagens na natureza. Além disso, foi incluída uma classe em nosso classificador: a neutralidade. Isto acarretou o aumento da chance de existir uma confusão entre a neutralidade e qualquer outra emoção da base CK, enquanto os outros trabalhos não apoiaram o reconhecimento para neutralidade. Contudo, não houve qualquer confusão em atribuir como neutralidade qualquer imagem oriunda da base CK, o que está correto, pois nessa base não há neutralidade. Podemos concluir que imagens fotografadas na natureza pouco afetam o desempenho em imagens laboratoriais estilo CK.    
 
 
 \section{Resumo}\label{sec:considera}
